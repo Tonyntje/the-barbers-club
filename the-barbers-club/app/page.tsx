@@ -1,9 +1,7 @@
-
-
 export default function Home() {
-  return (
-    <main className="flex flex-col items-center justify-between p-24">
-
-    </main>
-  )
+	return (
+		<main className="max-w-screen-2xl flex justify-between mx-auto p-6">
+			<section>Section</section>
+		</main>
+	)
 }
