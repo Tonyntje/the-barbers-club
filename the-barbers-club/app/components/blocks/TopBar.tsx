@@ -18,7 +18,7 @@ const Stars = () => {
 
 export const TopBar = () => {
   return (
-    <div className='w-full bg-neutral-200'>
+    <div className='w-full bg-neutral-200 text-neutral-700'>
       <div className='max-w-screen-2xl flex justify-between mx-auto px-6 p-3'>
         <div className='flex gap-2 items-center'>
           <Stars/>
