@@ -8,7 +8,9 @@ export const Header = () => {
     <header className='w-full bg-white border border-b-2 '>
       <TopBar/>
       <div className='max-w-screen-2xl flex justify-between mx-auto p-6'>
-        <Image width='200' src={TheBarberClubLogo} alt='The Barbers Club Logo'/>
+        <a href='/'>
+          <Image width='200' src={TheBarberClubLogo} alt='The Barbers Club Logo'/>
+        </a>
         <Nav/>
       </div>
     </header>

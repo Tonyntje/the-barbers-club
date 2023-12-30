@@ -7,7 +7,7 @@ export const Button = ({type, variant, label, icon}: Button) => {
       type={type}
       className={classNames('rounded-md transition-all', {
         'text-neutral-100 bg-primary-700 hover:bg-primary-600 font-light': variant === 'primary',
-        'text-neutral-950 border-2 hover:bg-primary-600 font-bold': variant === 'secondary'
+        'text-neutral-950 border-2 hover:bg-neutral-300 font-bold': variant === 'secondary'
       })}
     >
       <div className={classNames('py-2 px-6 flex items-center gap-2 ', {
