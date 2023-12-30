@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@carbon/icons": "^11.33.0",
+    "@carbon/icons-react": "^11.33.0",
     "classnames": "^2.5.1",
     "next": "14.0.4",
     "react": "^18",
