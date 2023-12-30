@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TheBarberClubLogo from '../../public/TheBarbersClubLogo.svg'
+import TheBarberClubLogo from '../../../public/TheBarbersClubLogo.svg'
 import {Nav} from "@/app/components/navigation/Nav";
 
 export const Header = () => {
