@@ -1,16 +1,14 @@
-import {FC, ReactNode} from 'react';
-import {JSX} from "react/jsx-runtime";
-import IntrinsicElements = JSX.IntrinsicElements;
+import { createElement, FC, ReactNode } from "react";
 
 type HeadingProps = {
-	level: number;
-	children: ReactNode;
+  level: number;
+  children: ReactNode;
 };
 
-const Heading: FC<HeadingProps> = ({level, children}) => {
-	const HeadingTag = `h${level}` as keyof IntrinsicElements;
+export const Heading: FC<HeadingProps> = ({ level, children }) => {
+  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
 
-	return <HeadingTag>{children}</HeadingTag>;
+  return createElement(HeadingTag, null, children);
 };
 
 export default Heading;

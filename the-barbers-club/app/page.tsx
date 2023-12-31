@@ -1,8 +1,11 @@
-import Heading from "@/app/components/content/Heading";
-import { Column } from "@/app/components/utilities/Column";
-import { Section } from "@/app/components/blocks/Section";
-import { HeroBanner } from "@/app/components/blocks/HeroBanner";
-import { Button } from "@/app/components/interaction/Button";
+import {
+  Box,
+  Button,
+  Column,
+  Heading,
+  HeroBanner,
+  Section,
+} from "@/app/components";
 import { ArrowRight } from "@carbon/icons-react";
 
 export default function Home() {
@@ -23,16 +26,19 @@ export default function Home() {
         </Column>
       </Section>
       <Section spacing={16}>
-        <Heading level={2}>Welkom bij The Barbers Club</Heading>
-        <p>
-          Dé plek waar stijl en vakmanschap samenkomen voor een ongeëvenaarde
-          grooming-ervaring. Onze ervaren barbers staan klaar om jouw look naar
-          een hoger niveau te tillen, terwijl je geniet van een relaxte sfeer en
-          persoonlijke service.
-        </p>
+        <div className="max-w-screen-md text-center mx-auto">
+          <Heading level={2}>Welkom bij The Barbers Club</Heading>
+          <p>
+            Dé plek waar stijl en vakmanschap samenkomen voor een ongeëvenaarde
+            grooming-ervaring. Onze ervaren barbers staan klaar om jouw look
+            naar een hoger niveau te tillen, terwijl je geniet van een relaxte
+            sfeer en persoonlijke service.
+          </p>
+        </div>
+        <Heading level={2}>Onze Kwaliteiten</Heading>
         <Column cols={2}>
           <div>
-            <Heading level={3}>Onze Diensten Klassiek Vakmanschap</Heading>
+            <Heading level={3}>Klassiek Vakmanschap</Heading>
             <p>
               Laat je verwennen door onze deskundige barbers, gespecialiseerd in
               klassieke herenkapsels en baardverzorging. Of je nu gaat voor een
@@ -53,7 +59,7 @@ export default function Home() {
           </div>
         </Column>
         <Column cols={2}>
-          <div>
+          <Box>
             <Heading level={3}>Onze Belofte</Heading>
             <p>
               Bij ons gaat het niet alleen om het knippen van haar; het gaat om
@@ -61,7 +67,7 @@ export default function Home() {
               toewijding aan kwaliteit, klanttevredenheid en hygiëne staat
               garant voor een bezoek waarbij jij je op je best voelt.
             </p>
-          </div>
+          </Box>
         </Column>
 
         <div className="flex">
