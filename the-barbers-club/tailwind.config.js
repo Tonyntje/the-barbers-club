@@ -6,6 +6,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    backgroundImage: {
+      'hero-image': "url('../public/header-image.jpg')",
+    },
     fontFamily: {
       'display': ['Oswald'],
       'body': ['"Open Sans"'],
@@ -55,4 +58,7 @@ module.exports = {
     },
   },
   plugins: [],
+  corePlugins: {
+    animation: ['responsive'],
+  },
 }
