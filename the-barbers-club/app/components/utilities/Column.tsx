@@ -5,9 +5,9 @@ export const Column = ({ cols, children }: ColumnType) => {
   return (
     <div
       className={classNames("grid w-full gap-6", {
-        "grid-cols-2": cols === 2,
-        "grid-cols-3": cols === 3,
-        "grid-cols-4": cols === 4,
+        "sm:grid-cols-2": cols === 2,
+        "sm:grid-cols-3": cols === 3,
+        "sm:grid-cols-4": cols === 4,
       })}
     >
       {children}
