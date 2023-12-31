@@ -1,10 +1,12 @@
 import {
   Box,
   Button,
+  CenterWrapper,
   Column,
   Heading,
   HeroBanner,
   Section,
+  Spacer,
 } from "@/app/components";
 import { ArrowRight } from "@carbon/icons-react";
 
@@ -26,7 +28,7 @@ export default function Home() {
         </Column>
       </Section>
       <Section spacing={16}>
-        <div className="max-w-screen-md text-center mx-auto">
+        <CenterWrapper>
           <Heading level={2}>Welkom bij The Barbers Club</Heading>
           <p>
             Dé plek waar stijl en vakmanschap samenkomen voor een ongeëvenaarde
@@ -34,10 +36,10 @@ export default function Home() {
             naar een hoger niveau te tillen, terwijl je geniet van een relaxte
             sfeer en persoonlijke service.
           </p>
-        </div>
+        </CenterWrapper>
         <Heading level={2}>Onze Kwaliteiten</Heading>
         <Column cols={2}>
-          <div>
+          <Box>
             <Heading level={3}>Klassiek Vakmanschap</Heading>
             <p>
               Laat je verwennen door onze deskundige barbers, gespecialiseerd in
@@ -45,10 +47,8 @@ export default function Home() {
               strakke fade, een traditionele scheerbeurt of een trendy snit, wij
               hebben de skills en passie om jouw stijl tot leven te brengen.
             </p>
-          </div>
-        </Column>
-        <Column cols={2}>
-          <div>
+          </Box>
+          <Box>
             <Heading level={3}> Moderne Trends</Heading>
             <p>
               Bij The Barbers Club omarmen we de laatste trends en technieken op
@@ -56,9 +56,7 @@ export default function Home() {
               op onze barbers om jou een eigentijdse uitstraling te geven die
               perfect past bij jouw persoonlijkheid en levensstijl.
             </p>
-          </div>
-        </Column>
-        <Column cols={2}>
+          </Box>
           <Box>
             <Heading level={3}>Onze Belofte</Heading>
             <p>
@@ -69,13 +67,14 @@ export default function Home() {
             </p>
           </Box>
         </Column>
-
-        <div className="flex">
+        <Spacer height={16} type="line" />
+        <CenterWrapper>
+          <Heading level={3}>Waar wacht je nog op?</Heading>
           <p>
-            Waar wacht je nog op? Maak vandaag nog een afspraak en ontdek waarom
-            The Barbers Club dé bestemming is voor mannen die streven naar
-            stijlvolle perfectie. Laat ons jouw look transformeren en ervaar de
-            finesse van echt barbiersvakmanschap.
+            Maak vandaag nog een afspraak en ontdek waarom The Barbers Club dé
+            bestemming is voor mannen die streven naar stijlvolle perfectie.
+            Laat ons jouw look transformeren en ervaar de finesse van echt
+            barbiersvakmanschap.
           </p>
           <Button
             type="button"
@@ -83,7 +82,7 @@ export default function Home() {
             label="Maak een afspraak"
             icon={<ArrowRight />}
           />
-        </div>
+        </CenterWrapper>
       </Section>
     </main>
   );
