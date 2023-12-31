@@ -18,3 +18,5 @@ export * from "./navigation/Nav";
 // Utilities
 export * from "./utilities/Box";
 export * from "./utilities/Column";
+export * from "./utilities/CenterWrapper";
+export * from "./utilities/Spacer";
