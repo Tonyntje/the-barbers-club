@@ -7,8 +7,12 @@ import {
   HeroBanner,
   Section,
   Spacer,
+  SubBlock,
 } from "@/app/components";
 import { ArrowRight } from "@carbon/icons-react";
+import Placeholder1 from "@/public/placeholder1.jpg";
+import Placeholder2 from "@/public/placeholder2.jpg";
+import Placeholder3 from "@/public/placeholder3.jpg";
 
 export default function Home() {
   return (
@@ -16,15 +20,9 @@ export default function Home() {
       <HeroBanner />
       <Section spacing={8}>
         <Column cols={3}>
-          <div className="bg-neutral-200 min-h-[250px] p-6 top-slide-slow">
-            <Heading level={3}> Subheading</Heading>
-          </div>
-          <div className="bg-neutral-200 min-h-[250px] p-6 top-slide-slow">
-            <Heading level={3}> Subheading</Heading>
-          </div>
-          <div className="bg-neutral-200 min-h-[250px] p-6 top-slide-slow">
-            <Heading level={3}> Subheading</Heading>
-          </div>
+          <SubBlock title="Vakmanschap" image={Placeholder1} />
+          <SubBlock title="The Barbershop" image={Placeholder2} />
+          <SubBlock title="Tools" image={Placeholder3} />
         </Column>
       </Section>
       <Section spacing={16}>

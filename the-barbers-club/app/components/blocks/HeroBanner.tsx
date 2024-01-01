@@ -8,6 +8,7 @@ export const HeroBanner = () => {
     <section className="w-full border-b-2 bg-neutral-200">
       <div className="relative">
         <Image
+          priority
           alt="The Barbers Club fade"
           src={HeroImage}
           placeholder="blur"

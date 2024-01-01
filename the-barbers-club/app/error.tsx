@@ -29,11 +29,10 @@ export default function Error({
       <ErrorNum />
       <Heading level={1}>Something went wrong</Heading>
       <div className="flex items-center gap-2">
-        <p>De pagina</p>
-        <p className="border py-0.5 px-2 text-neutral-600 border-neutral-300 bg-neutral-100 rounded-lg">
-          {window.location.pathname}
+        <p>
+          Er is iets mis gegaan. Refresh de pagina of navigeer naar de
+          homepagina.
         </p>
-        <p>is niet gevonden</p>
       </div>
       <Button type="button" variant="secondary" label="Keer terug naar home" />
     </div>
