@@ -21,3 +21,7 @@ export * from "./utilities/Column";
 export * from "./utilities/CenterWrapper";
 export * from "./utilities/Spacer";
 export * from "./utilities/SubBlock";
+
+// Form
+export * from "./form/inputText";
+export * from "./form/inputSelect";

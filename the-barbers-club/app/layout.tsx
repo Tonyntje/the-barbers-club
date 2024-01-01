@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/app/components/blocks/Header";
 import { Footer } from "@/app/components/blocks/Footer";
 import { ReactNode } from "react";
+import { BookingForm } from "@/app/components/booking-form/BookingForm";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <BookingForm />
       </body>
     </html>
   );
