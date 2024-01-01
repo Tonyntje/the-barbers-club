@@ -1,15 +1,19 @@
-import { Control, Controller, FieldValues } from "react-hook-form";
+"use client";
 
-export const SelectInput = ({
+import { Control, Controller, FieldValues } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+export const DateInput = ({
   label,
   name,
   control,
-  options,
+  setValue,
 }: {
   readonly label: string;
   readonly name: string;
   readonly control: Control<FieldValues> | undefined;
-  readonly options: { value: string; label: string }[];
+  readonly setValue: any;
 }) => {
   return (
     <div className="flex flex-col gap-2 mb-4">
@@ -17,20 +21,18 @@ export const SelectInput = ({
         {label}
       </label>
       <Controller
-        name={name}
         control={control}
-        defaultValue=""
+        name="date"
+        defaultValue={null}
         render={({ field }) => (
-          <select
+          <DatePicker
+            selected={field.value}
+            onChange={(date: Date | null) => {
+              setValue("date", date);
+            }}
+            dateFormat="yyyy-MM-dd"
             className="border-neutral-200 px-2 py-1 border rounded"
-            {...field}
-          >
-            {options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          />
         )}
       />
     </div>

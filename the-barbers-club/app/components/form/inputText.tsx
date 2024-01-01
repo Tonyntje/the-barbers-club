@@ -19,7 +19,7 @@ export const TextInput = ({
         control={control}
         defaultValue=""
         render={({ field }) => (
-          <input className="border-neutral-200 border rounded" {...field} />
+          <input className="px-2 py-1 border rounded" {...field} />
         )}
       />
     </div>

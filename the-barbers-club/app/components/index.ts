@@ -25,3 +25,4 @@ export * from "./utilities/SubBlock";
 // Form
 export * from "./form/inputText";
 export * from "./form/inputSelect";
+export * from "./form/inputDate";
