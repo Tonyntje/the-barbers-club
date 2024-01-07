@@ -21,20 +21,13 @@ const services = [
   { value: "shave", label: "🪒 Baard scheren", details: "Details for shaving" },
 ];
 
-const timeSlots = [
-  "09:00",
-  "09:30",
-  "10:00",
-  "10:30",
-  "11:00",
-  "11:30",
-  "12:00",
-  "12:30",
-  "13:00",
-];
-
-export const BookingForm = () => {
-  const [open, setOpen] = useState(false);
+export const BookingForm = ({
+  isOpen,
+  setBookingForm,
+}: {
+  readonly isOpen: boolean;
+  readonly setBookingForm: (state: boolean) => void;
+}) => {
   const [stepStatus, setStepStatus] = useState(1);
   const { control, handleSubmit, getValues, setValue } = useForm();
 
@@ -42,11 +35,11 @@ export const BookingForm = () => {
 
   return (
     <>
-      {open ? (
+      {isOpen ? (
         <form onSubmit={handleSubmit(submitHandler)}>
           <div className="fixed border rounded-lg shadow-2xl right-6 p-12 bottom-6 bg-neutral-100 w-full max-w-[450px] min-w-[200px]">
             <div
-              onClick={() => setOpen(!open)}
+              onClick={() => setBookingForm(isOpen)}
               className="bg-neutral-400 rounded-lg inline-block absolute right-2 top-2 cursor-pointer"
             >
               <Subtract size={24} />
@@ -151,7 +144,7 @@ export const BookingForm = () => {
         </form>
       ) : (
         <div
-          onClick={() => setOpen(!open)}
+          onClick={() => setBookingForm(isOpen)}
           className="cursor-pointer fixed rounded-lg shadow-2xl right-12 px-6 py-3 bottom-6 bg-primary-700"
         >
           <span className="text-white flex items-center gap-2">

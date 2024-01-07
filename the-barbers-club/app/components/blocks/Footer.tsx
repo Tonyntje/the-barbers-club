@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import TheBarbersClubFooterLogo from "../../../public/TheBarbersClubFooterLogo.svg";
 import { Column } from "@/app/components/utilities/Column";
@@ -15,7 +17,13 @@ const shopTimes = [
   { time: "Gesloten", label: "Zondag" },
 ];
 
-export const Footer = () => {
+export const Footer = ({
+  isOpen,
+  setBookingForm,
+}: {
+  readonly isOpen: boolean;
+  readonly setBookingForm: (state: boolean) => void;
+}) => {
   return (
     <footer className="w-full bg-neutral-800 text-white">
       <div className="max-w-screen-2xl flex justify-between mx-auto px-6 py-24">
@@ -45,7 +53,12 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            <Button type="button" variant="primary" label="Afspraak maken" />
+            <Button
+              type="button"
+              variant="primary"
+              label="Afspraak maken"
+              onClick={() => setBookingForm(isOpen)}
+            />
           </div>
         </Column>
       </div>
