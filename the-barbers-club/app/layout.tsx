@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { BookingForm, Footer, Header } from "@/app/components";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { create } from "zustand";
 import { BearState } from "@/app/constants";
@@ -32,8 +32,7 @@ const RootLayout = ({
   const setBookingForm = store((state) => state.setBookingForm);
 
   const bookingFormStore = { isOpen, setBookingForm };
-
-  const isDev = searchParams?.secretsite;
+  const [isDev] = useState(searchParams?.secretsite);
   console.log(isDev);
   console.log(isDev ? "Is Dev" : "Is live");
 
