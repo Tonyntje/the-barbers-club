@@ -42,7 +42,7 @@ export const Footer = ({
           </div>
 
           <div className="col-span-2">
-            <Heading level={3}>Openingstijden</Heading>
+            <Heading level={3}>Openingstijden</Heading>F
             <ul className="mb-8 grid grid-cols-2 gap-x-8">
               {shopTimes.map(({ time, label }) => (
                 <li
