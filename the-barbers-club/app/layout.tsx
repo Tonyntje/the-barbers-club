@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { create } from "zustand";
 import { BearState } from "@/app/constants";
 import Image from "next/image";
@@ -13,11 +13,6 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const store = create<BearState>()((set) => ({
-  isOpen: false,
-  setBookingForm: (state: boolean) => set({ isOpen: !state }),
-}));
-
 const RootLayout = ({
   children,
   searchParams,
@@ -25,13 +20,18 @@ const RootLayout = ({
   readonly children: ReactNode;
   searchParams: { [key: string]: string };
 }) => {
+  const store = create<BearState>()((set) => ({
+    isOpen: false,
+    setBookingForm: (state: boolean) => set({ isOpen: !state }),
+  }));
+
   // const isOpen = store((state) => state.isOpen);
   // const setBookingForm = store((state) => state.setBookingForm);
 
   // const bookingFormStore = { isOpen, setBookingForm };
-  const [isDev] = useState(searchParams?.secretsite);
-  console.log(isDev);
-  console.log(isDev ? "Is Dev" : "Is live");
+  // const [isDev] = useState(searchParams?.secretsite);
+  // console.log(isDev);
+  // console.log(isDev ? "Is Dev" : "Is live");
 
   return (
     <html lang="en">
