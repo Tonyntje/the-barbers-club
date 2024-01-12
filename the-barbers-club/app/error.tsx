@@ -1,6 +1,5 @@
 "use client"; // Error components must be Client Components
 
-import { useEffect } from "react";
 import Heading from "@/app/components/content/Heading";
 import { Button } from "@/app/components/interaction/Button";
 
@@ -19,11 +18,6 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
   return (
     <div className=" gap-4 radial-background w-full h-full sm:min-h-[700px] p-28 flex flex-col items-center justify-center">
       <ErrorNum />

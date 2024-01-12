@@ -17,7 +17,7 @@ import { PaymentButton } from "@/app/components/PaymentButton";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <HeroBanner />
       <Section spacing={8}>
         <Column cols={3}>
@@ -84,6 +84,6 @@ export default function Home() {
           />
         </CenterWrapper>
       </Section>
-    </main>
+    </>
   );
 }

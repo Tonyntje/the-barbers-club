@@ -25,10 +25,10 @@ const RootLayout = ({
   readonly children: ReactNode;
   searchParams: { [key: string]: string };
 }) => {
-  const isOpen = store((state) => state.isOpen);
-  const setBookingForm = store((state) => state.setBookingForm);
+  // const isOpen = store((state) => state.isOpen);
+  // const setBookingForm = store((state) => state.setBookingForm);
 
-  const bookingFormStore = { isOpen, setBookingForm };
+  // const bookingFormStore = { isOpen, setBookingForm };
   const [isDev] = useState(searchParams?.secretsite);
   console.log(isDev);
   console.log(isDev ? "Is Dev" : "Is live");
@@ -37,12 +37,12 @@ const RootLayout = ({
     <html lang="en">
       <body>
         {isDev ? (
-          <>
+          <main>
             {/*<Header {...bookingFormStore} />*/}
             {/*{children}*/}
             {/*<Footer {...bookingFormStore} />*/}
             {/*<BookingForm {...bookingFormStore} />*/}
-          </>
+          </main>
         ) : (
           <main
             className={`${manrope.className} flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen`}
