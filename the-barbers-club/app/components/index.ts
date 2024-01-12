@@ -26,3 +26,4 @@ export * from "./utilities/SubBlock";
 export * from "./form/inputText";
 export * from "./form/inputSelect";
 export * from "./form/inputDate";
+export * from "./booking-form/BookingForm";

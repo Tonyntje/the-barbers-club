@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/interaction/Button";
-import Heading from "@/app/components/content/Heading";
+import { Button, Heading } from "@/app/components";
 
 const ErrorNum = () => {
   return (

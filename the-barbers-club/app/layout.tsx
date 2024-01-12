@@ -1,10 +1,8 @@
 "use client";
 
 import "./globals.css";
-import { Header } from "@/app/components/blocks/Header";
-import { Footer } from "@/app/components/blocks/Footer";
+import { BookingForm, Footer, Header } from "@/app/components";
 import { ReactNode } from "react";
-import { BookingForm } from "@/app/components/booking-form/BookingForm";
 
 import { create } from "zustand";
 import { BearState } from "@/app/constants";
@@ -12,7 +10,6 @@ import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
 import { Manrope } from "next/font/google";
-import { checkForDev } from "@/app/getDev";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -24,13 +21,20 @@ const store = create<BearState>()((set) => ({
   setBookingForm: (state: boolean) => set({ isOpen: !state }),
 }));
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+const RootLayout = ({
+  children,
+  searchParams,
+}: {
+  readonly children: ReactNode;
+  searchParams: { [key: string]: string };
+}) => {
   const isOpen = store((state) => state.isOpen);
   const setBookingForm = store((state) => state.setBookingForm);
 
   const bookingFormStore = { isOpen, setBookingForm };
 
-  const isDev = checkForDev();
+  const isDev = searchParams?.secretsite;
+  console.log(isDev);
   console.log(isDev ? "Is Dev" : "Is live");
 
   return (
@@ -74,4 +78,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
