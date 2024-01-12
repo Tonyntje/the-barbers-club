@@ -1,9 +1,6 @@
 "use client";
 
-import "./globals.css";
-import { BookingForm, Footer, Header } from "@/app/components";
 import { ReactNode, useState } from "react";
-
 import { create } from "zustand";
 import { BearState } from "@/app/constants";
 import Image from "next/image";
@@ -41,10 +38,10 @@ const RootLayout = ({
       <body>
         {isDev ? (
           <>
-            <Header {...bookingFormStore} />
-            {children}
-            <Footer {...bookingFormStore} />
-            <BookingForm {...bookingFormStore} />
+            {/*<Header {...bookingFormStore} />*/}
+            {/*{children}*/}
+            {/*<Footer {...bookingFormStore} />*/}
+            {/*<BookingForm {...bookingFormStore} />*/}
           </>
         ) : (
           <main
