@@ -1,3 +1,5 @@
+"use client";
+
 import { Control, Controller, FieldValues } from "react-hook-form";
 
 export const TextInput = ({
