@@ -1,8 +1,6 @@
 "use client";
 
 import { ReactNode } from "react";
-import { create } from "zustand";
-import { BearState } from "@/app/constants";
 import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
@@ -20,10 +18,10 @@ const RootLayout = ({
   readonly children: ReactNode;
   searchParams: { [key: string]: string };
 }) => {
-  const store = create<BearState>()((set) => ({
-    isOpen: false,
-    setBookingForm: (state: boolean) => set({ isOpen: !state }),
-  }));
+  // const store = create<BearState>()((set) => ({
+  //   isOpen: false,
+  //   setBookingForm: (state: boolean) => set({ isOpen: !state }),
+  // }));
 
   // const isOpen = store((state) => state.isOpen);
   // const setBookingForm = store((state) => state.setBookingForm);
