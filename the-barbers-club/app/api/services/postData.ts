@@ -1,8 +1,8 @@
-import { apiEndpoint, apiKey } from "@/app/api/services/apiSettings";
+import { apiKey, bookingApiEndpoint } from "@/app/api/services/apiSettings";
 
 async function postData() {
   try {
-    const response = await fetch(apiEndpoint, {
+    const response = await fetch(bookingApiEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

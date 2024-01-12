@@ -1,8 +1,8 @@
-import { apiEndpoint, apiKey } from "@/app/api/services/apiSettings";
+import { apiKey, bookingApiEndpoint } from "@/app/api/services/apiSettings";
 
 export const fetchDataUserData = async (orderNumber: string) => {
   try {
-    const response = await fetch(apiEndpoint, {
+    const response = await fetch(bookingApiEndpoint, {
       method: "GET",
       headers: {
         ...(apiKey && { Authorization: apiKey }),

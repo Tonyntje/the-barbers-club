@@ -13,6 +13,7 @@ import { ArrowRight } from "@carbon/icons-react";
 import Placeholder1 from "@/public/placeholder1.jpg";
 import Placeholder2 from "@/public/placeholder2.jpg";
 import Placeholder3 from "@/public/placeholder3.jpg";
+import { PaymentButton } from "@/app/components/PaymentButton";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           <SubBlock title="Tools" image={Placeholder3} />
         </Column>
       </Section>
+      <PaymentButton />
       <Section spacing={16}>
         <CenterWrapper>
           <Heading level={2}>Welkom bij The Barbers Club</Heading>

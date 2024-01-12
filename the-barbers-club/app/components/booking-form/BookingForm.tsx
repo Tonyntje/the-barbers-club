@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
 import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
 import Image from "next/image";
+import { createTransaction } from "@/app/api/services/createTransaction";
 
 const services = [
   { value: "wash", label: "🌊 Haar wassen", details: "Details for washing" },
@@ -31,7 +32,10 @@ export const BookingForm = ({
   const [stepStatus, setStepStatus] = useState(1);
   const { control, handleSubmit, getValues, setValue } = useForm();
 
-  const submitHandler = () => {};
+  const submitHandler = async () => {
+    const transaction = await createTransaction({ method: "ideal" });
+    console.log(transaction);
+  };
 
   return (
     <>

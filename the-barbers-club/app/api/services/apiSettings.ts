@@ -1,2 +1,4 @@
-export const apiEndpoint = process.env.NEXT_PUBLIC_API_URL + "api/booking";
+export const websiteURL = process.env.NEXT_PUBLIC_API_URL;
+export const bookingApiEndpoint = websiteURL + "api/booking";
 export const apiKey = process.env.CLIENT_KEY;
+export const mollieKey = process.env.MOLLIE_KEY;
