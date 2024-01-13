@@ -9,13 +9,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const RootLayout = ({
-  children,
-  searchParams,
-}: {
-  readonly children: ReactNode;
-  searchParams: { [key: string]: string };
-}) => {
+const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   // const store = create<BearState>()((set) => ({
   //   isOpen: false,
   //   setBookingForm: (state: boolean) => set({ isOpen: !state }),
