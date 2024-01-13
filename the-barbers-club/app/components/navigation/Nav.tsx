@@ -26,8 +26,8 @@ export const Nav = ({
   isOpen,
   setBookingForm,
 }: {
-  readonly isOpen: boolean;
-  readonly setBookingForm: (state: boolean) => void;
+  readonly isOpen?: boolean;
+  readonly setBookingForm?: (state: boolean) => void;
 }) => {
   return (
     <nav className="flex items-center gap-12 text-lg">
@@ -36,7 +36,9 @@ export const Nav = ({
       <Button
         variant="primary"
         type="button"
-        onClick={() => setBookingForm(isOpen)}
+        onClick={
+          setBookingForm && isOpen ? () => setBookingForm(isOpen) : undefined
+        }
         label="Reserveer"
         icon={<ArrowRight />}
       />

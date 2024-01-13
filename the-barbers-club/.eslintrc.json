@@ -4,8 +4,7 @@
     "next",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "react"
+    "plugin:react-hooks/recommended"
   ],
   "rules": {
     "react/jsx-uses-react": "error",

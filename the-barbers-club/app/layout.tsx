@@ -4,8 +4,6 @@ import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
 import { Manrope } from "next/font/google";
-import { BearState } from "@/app/constants";
-import { create } from "zustand";
 import { Footer, Header } from "@/app/components";
 
 const manrope = Manrope({
@@ -14,17 +12,18 @@ const manrope = Manrope({
 });
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
-  const store = create<BearState>()((set) => ({
-    isOpen: false,
-    isDev: false,
-    setBookingForm: (state: boolean) => set({ isOpen: !state }),
-  }));
+  // const store = create<BearState>()((set) => ({
+  //   isOpen: false,
+  //   isDev: false,
+  //   setBookingForm: (state: boolean) => set({ isOpen: !state }),
+  // }));
 
-  const isOpen = store((state) => state.isOpen);
-  const isDev = store((state) => state.isOpen);
-  const setBookingForm = store((state) => state.setBookingForm);
+  // const isOpen = store((state) => state.isOpen);
+  // const isDev = store((state) => state.isOpen);
+  // const setBookingForm = store((state) => state.setBookingForm);
 
-  const bookingFormStore = { isOpen, setBookingForm };
+  // const bookingFormStore = { isOpen, setBookingForm };
+  const isDev = false;
   console.log(isDev ? "Is Dev" : "Is live");
 
   return (
@@ -32,9 +31,9 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
       <body>
         {isDev ? (
           <main>
-            <Header {...bookingFormStore} />
+            <Header />
             {children}
-            <Footer {...bookingFormStore} />
+            <Footer />
             {/*<BookingForm {...bookingFormStore} />*/}
           </main>
         ) : (

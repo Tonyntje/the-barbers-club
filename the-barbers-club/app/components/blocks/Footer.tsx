@@ -21,8 +21,8 @@ export const Footer = ({
   isOpen,
   setBookingForm,
 }: {
-  readonly isOpen: boolean;
-  readonly setBookingForm: (state: boolean) => void;
+  readonly isOpen?: boolean;
+  readonly setBookingForm?: (state: boolean) => void;
 }) => {
   return (
     <footer className="w-full bg-neutral-800 text-white">
@@ -57,7 +57,11 @@ export const Footer = ({
               type="button"
               variant="primary"
               label="Afspraak maken"
-              onClick={() => setBookingForm(isOpen)}
+              onClick={
+                setBookingForm && isOpen
+                  ? () => setBookingForm(isOpen)
+                  : undefined
+              }
             />
           </div>
         </Column>

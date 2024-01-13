@@ -9,8 +9,8 @@ export const Header = ({
   isOpen,
   setBookingForm,
 }: {
-  readonly isOpen: boolean;
-  readonly setBookingForm: (state: boolean) => void;
+  readonly isOpen?: boolean;
+  readonly setBookingForm?: (state: boolean) => void;
 }) => {
   return (
     <header className="w-full bg-white border border-b-2 ">
