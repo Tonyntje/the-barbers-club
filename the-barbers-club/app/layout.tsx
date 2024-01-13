@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
 import { Manrope } from "next/font/google";
-import { Footer, Header } from "@/app/components";
+import { BookingForm, Footer, Header } from "@/app/components";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -12,17 +12,6 @@ const manrope = Manrope({
 });
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
-  // const store = create<BearState>()((set) => ({
-  //   isOpen: false,
-  //   isDev: false,
-  //   setBookingForm: (state: boolean) => set({ isOpen: !state }),
-  // }));
-
-  // const isOpen = store((state) => state.isOpen);
-  // const isDev = store((state) => state.isOpen);
-  // const setBookingForm = store((state) => state.setBookingForm);
-
-  // const bookingFormStore = { isOpen, setBookingForm };
   const isDev = false;
   console.log(isDev ? "Is Dev" : "Is live");
 
@@ -34,7 +23,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
             <Header />
             {children}
             <Footer />
-            {/*<BookingForm {...bookingFormStore} />*/}
+            <BookingForm />
           </main>
         ) : (
           <main

@@ -4,14 +4,12 @@ import Image from "next/image";
 import TheBarberClubLogo from "../../../public/TheBarbersClubLogo.svg";
 import { Nav } from "@/app/components/navigation/Nav";
 import { TopBar } from "@/app/components/blocks/TopBar";
+import { useBookingStore } from "@/app/machine";
 
-export const Header = ({
-  isOpen,
-  setBookingForm,
-}: {
-  readonly isOpen?: boolean;
-  readonly setBookingForm?: (state: boolean) => void;
-}) => {
+export const Header = () => {
+  const isOpen = useBookingStore((state) => state.isOpen);
+  const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
+
   return (
     <header className="w-full bg-white border border-b-2 ">
       <TopBar />
@@ -23,7 +21,7 @@ export const Header = ({
             alt="The Barbers Club Logo"
           />
         </a>
-        <Nav isOpen={isOpen} setBookingForm={setBookingForm} />
+        <Nav isOpen={isOpen} setBookingForm={setBookingStatus} />
       </div>
     </header>
   );

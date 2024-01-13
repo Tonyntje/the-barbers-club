@@ -6,6 +6,7 @@ import { Column } from "@/app/components/utilities/Column";
 import Heading from "@/app/components/content/Heading";
 import { Copyright } from "@/app/components/blocks/Copyright";
 import { Button } from "@/app/components/interaction/Button";
+import { useBookingStore } from "@/app/machine";
 
 const shopTimes = [
   { time: "10:00 - 16:00", label: "Maandag" },
@@ -17,13 +18,10 @@ const shopTimes = [
   { time: "Gesloten", label: "Zondag" },
 ];
 
-export const Footer = ({
-  isOpen,
-  setBookingForm,
-}: {
-  readonly isOpen?: boolean;
-  readonly setBookingForm?: (state: boolean) => void;
-}) => {
+export const Footer = () => {
+  const isOpen = useBookingStore((state) => state.isOpen);
+  const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
+
   return (
     <footer className="w-full bg-neutral-800 text-white">
       <div className="max-w-screen-2xl flex justify-between mx-auto px-6 py-24">
@@ -57,11 +55,7 @@ export const Footer = ({
               type="button"
               variant="primary"
               label="Afspraak maken"
-              onClick={
-                setBookingForm && isOpen
-                  ? () => setBookingForm(isOpen)
-                  : undefined
-              }
+              onClick={() => setBookingStatus(isOpen)}
             />
           </div>
         </Column>
