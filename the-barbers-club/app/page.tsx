@@ -8,12 +8,11 @@ import {
   Section,
   Spacer,
   SubBlock,
-} from "@/app/components";
-import { ArrowRight } from "@carbon/icons-react";
-import Placeholder1 from "@/public/placeholder1.jpg";
-import Placeholder2 from "@/public/placeholder2.jpg";
-import Placeholder3 from "@/public/placeholder3.jpg";
-import { PaymentButton } from "@/app/components/PaymentButton";
+} from '@/app/components';
+import { ArrowRight } from '@carbon/icons-react';
+import Placeholder1 from '@/public/placeholder1.jpg';
+import Placeholder2 from '@/public/placeholder2.jpg';
+import Placeholder3 from '@/public/placeholder3.jpg';
 
 export default function Home() {
   return (
@@ -21,12 +20,11 @@ export default function Home() {
       <HeroBanner />
       <Section spacing={8}>
         <Column cols={3}>
-          <SubBlock title="Vakmanschap" image={Placeholder1} />
-          <SubBlock title="The Barbershop" image={Placeholder2} />
-          <SubBlock title="Tools" image={Placeholder3} />
+          <SubBlock title='Vakmanschap' image={Placeholder1} />
+          <SubBlock title='The Barbershop' image={Placeholder2} />
+          <SubBlock title='Tools' image={Placeholder3} />
         </Column>
       </Section>
-      <PaymentButton />
       <Section spacing={16}>
         <CenterWrapper>
           <Heading level={2}>Welkom bij The Barbers Club</Heading>
@@ -67,7 +65,7 @@ export default function Home() {
             </p>
           </Box>
         </Column>
-        <Spacer height={16} type="line" />
+        <Spacer height={16} type='line' />
         <CenterWrapper>
           <Heading level={3}>Waar wacht je nog op?</Heading>
           <p>
@@ -77,9 +75,9 @@ export default function Home() {
             barbiersvakmanschap.
           </p>
           <Button
-            type="button"
-            variant="primary"
-            label="Maak een afspraak"
+            type='button'
+            variant='primary'
+            label='Maak een afspraak'
             icon={<ArrowRight />}
           />
         </CenterWrapper>
