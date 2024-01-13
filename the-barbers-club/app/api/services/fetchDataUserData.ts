@@ -23,4 +23,6 @@ export const fetchDataUserData = async (orderNumber: string) => {
   } catch (error: unknown) {
     console.error("Error fetching data:", error);
   }
+
+  return false;
 };

@@ -1,15 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Dummy data
-const orders: DataType[] = [
-  {
-    id: "0",
-    name: "John Doe",
-    phone: "07012345678",
-    service: "trimming",
-    dateOfReservation: new Date("13-01-2024"),
-  },
-];
+const orders: DataType[] = [];
 
 export async function GET(request: NextRequest) {
   if (request && !validateApiKey(request.headers.get("Authorization"))) {

@@ -32,4 +32,6 @@ export const createTransaction = async ({
   } catch (error) {
     console.error("Error posting data:", error);
   }
+
+  return false;
 };
