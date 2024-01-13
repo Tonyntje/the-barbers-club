@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import "./globals.css";
 import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
@@ -33,7 +34,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         {/*<BookingForm {...bookingFormStore} />*/}
         {/*</main>*/}
         <main
-          className={`${manrope.className} flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen`}
+          className={`flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen ${manrope.className} `}
         >
           <div className="border-primary-200 sm:shadow-2xl text-center text-white sm:border p-6 sm:p-12 sm:rounded-2xl max-w-[600px]">
             <Image className="mx-auto mb-10" src={Logo} alt={"logo"} />
