@@ -9,9 +9,9 @@ import {
   Spacer,
   SubBlock,
 } from "@/app/components";
-import Placeholder1 from "../public/the-barbers-club-buitenkant-ingang.jpg";
-import Placeholder2 from "../public/the-barbers-club-interior-design.jpg";
-import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jpg";
+import Placeholder1 from "@/public/photos/the-barbers-club-buitenkant-ingang.jpg";
+import Placeholder2 from "@/public/photos/the-barbers-club-interior-design.jpg";
+import Placeholder3 from "@/public/photos/the-barbers-club-interior-from-the-inside.jpg";
 
 export default function Home() {
   return (

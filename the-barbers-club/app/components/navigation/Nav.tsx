@@ -31,9 +31,11 @@ export const Nav = ({
 }) => {
   return (
     <nav className="flex items-center gap-12 text-lg">
-      <NavLink label="Prijzenlijst" href="/prijzen/" />
-      <NavLink label="The barbers Club" href="/the-barbers-club/" />
-      <NavLink label="Contact" href="/contact/" />
+      <div className="flex items-center gap-12 absolute -top-[200px] sm:top-0 sm:relative ">
+        <NavLink label="Prijzenlijst" href="/prijzen/" />
+        <NavLink label="The barbers Club" href="/the-barbers-club/" />
+        <NavLink label="Contact" href="/contact/" />
+      </div>
       <Button
         variant="primary"
         type="button"
