@@ -23,19 +23,19 @@ export const TopBar = () => {
         <div className="flex gap-2 items-center">
           <Stars />
           <span className="font-black text-sm">(60+)</span>
-          <p>sterren op</p>
+          <span>sterren op</span>
           <a href="https://www.treatwell.nl/salon/the-scissors-club/">
             <Image src={TreatwellLogo} alt="Treatwell Logo" />
           </a>
         </div>
         <div className="flex gap-2">
-          <p className="font-bold">Liever direct contact?</p>
-          <p>
+          <span className="font-bold">Liever direct contact?</span>
+          <span>
             Bel of App{" "}
             <a className="font-bold text-primary-600" href="tel:0701234123402">
               +070 1234 1234 02
             </a>
-          </p>
+          </span>
         </div>
       </div>
     </div>

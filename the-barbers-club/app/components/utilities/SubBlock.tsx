@@ -22,7 +22,7 @@ export const SubBlock = ({
             objectFit: "cover",
           }}
         />
-        <div className="overlay w-full h-full absolute"></div>
+        <div className="overlay w-full h-full absolute opacity-50"></div>
         <div className="relative text-white px-6 pt-6 min-h-[250px] flex flex-col justify-end">
           <Heading level={3}>{title}</Heading>
           <p className="mt-0">Description</p>

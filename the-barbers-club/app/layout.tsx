@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        {isDev ? (
+        {!isDev ? (
           <main>
             <Header />
             {children}
