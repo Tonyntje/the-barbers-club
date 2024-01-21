@@ -31,7 +31,8 @@ export const Nav = ({
 }) => {
   return (
     <nav className="flex items-center gap-12 text-lg">
-      <NavLink label="Over ons" href="/over-ons/" />
+      <NavLink label="Prijzenlijst" href="/prijzen/" />
+      <NavLink label="The barbers Club" href="/the-barbers-club/" />
       <NavLink label="Contact" href="/contact/" />
       <Button
         variant="primary"

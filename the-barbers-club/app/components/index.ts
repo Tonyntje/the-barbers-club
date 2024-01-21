@@ -1,13 +1,15 @@
 // Blocks
 export * from "./blocks/TopBar";
 export * from "./blocks/Header";
-export * from "./blocks/HeroBanner";
 export * from "./blocks/Section";
 export * from "./blocks/Footer";
 export * from "./blocks/Copyright";
 
 // Content
 export * from "./content/Heading";
+export * from "./content/HeroBanner";
+export * from "./content/CallToActionSection";
+export * from "./content/PageHeader";
 
 // Interaction
 export * from "./interaction/Button";

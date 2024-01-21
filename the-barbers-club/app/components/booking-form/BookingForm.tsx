@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
 import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
 import Image from "next/image";
-import { useBookingStore } from "@/app/machine";
+import { useBookingStore } from "@/app/machine/machine";
 
 const services = [
   { value: "wash", label: "🌊 Haar wassen", details: "Details for washing" },

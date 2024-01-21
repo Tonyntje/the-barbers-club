@@ -12,30 +12,28 @@ export default async function Page({
   const data = orderNumber && (await fetchDataUserData(orderNumber));
 
   return (
-    <main>
-      <Section spacing={16}>
-        <Column cols={2}>
-          <div className="flex items-center">
-            <Heading level={1}>Bedankt voor je reservering!</Heading>
-          </div>
-          <div id="emitter"></div>
-          <Box>
-            <p>
-              <strong>Uw ordernummer</strong> {data.id}
-            </p>
-            <p>
-              <strong>Uw naam</strong> {data.name}
-            </p>
-            <p>
-              <strong>Uw telefoon nummer</strong> {data.phone}
-            </p>
-            <p>
-              <strong>Uw gekozen dienst</strong> {data.service}
-            </p>
-          </Box>
-        </Column>
-      </Section>
-    </main>
+    <Section spacing={16}>
+      <Column cols={2}>
+        <div className="flex items-center">
+          <Heading level={1}>Bedankt voor je reservering!</Heading>
+        </div>
+        <div id="emitter"></div>
+        <Box>
+          <p>
+            <strong>Uw ordernummer</strong> {data.id}
+          </p>
+          <p>
+            <strong>Uw naam</strong> {data.name}
+          </p>
+          <p>
+            <strong>Uw telefoon nummer</strong> {data.phone}
+          </p>
+          <p>
+            <strong>Uw gekozen dienst</strong> {data.service}
+          </p>
+        </Box>
+      </Column>
+    </Section>
   );
 }
 

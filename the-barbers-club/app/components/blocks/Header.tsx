@@ -4,7 +4,7 @@ import Image from "next/image";
 import TheBarberClubLogo from "../../../public/TheBarbersClubLogo.svg";
 import { Nav } from "@/app/components/navigation/Nav";
 import { TopBar } from "@/app/components/blocks/TopBar";
-import { useBookingStore } from "@/app/machine";
+import { useBookingStore } from "@/app/machine/machine";
 
 export const Header = () => {
   const isOpen = useBookingStore((state) => state.isOpen);

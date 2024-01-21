@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+  CallToActionSection,
   CenterWrapper,
   Column,
   Heading,
@@ -9,7 +9,6 @@ import {
   Spacer,
   SubBlock,
 } from "@/app/components";
-import { ArrowRight } from "@carbon/icons-react";
 import Placeholder1 from "../public/the-barbers-club-buitenkant-ingang.jpg";
 import Placeholder2 from "../public/the-barbers-club-interior-design.jpg";
 import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jpg";
@@ -70,21 +69,7 @@ export default function Home() {
           </Box>
         </Column>
         <Spacer height={16} type="line" />
-        <CenterWrapper>
-          <Heading level={3}>Waar wacht je nog op?</Heading>
-          <p>
-            Maak vandaag nog een afspraak en ontdek waarom The Barbers Club dé
-            bestemming is voor mannen die streven naar stijlvolle perfectie.
-            Laat ons jouw look transformeren en ervaar de finesse van echt
-            barbiersvakmanschap.
-          </p>
-          <Button
-            type="button"
-            variant="primary"
-            label="Maak een afspraak"
-            icon={<ArrowRight />}
-          />
-        </CenterWrapper>
+        <CallToActionSection />
       </Section>
     </>
   );

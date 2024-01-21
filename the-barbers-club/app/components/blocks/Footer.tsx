@@ -6,7 +6,7 @@ import { Column } from "@/app/components/utilities/Column";
 import Heading from "@/app/components/content/Heading";
 import { Copyright } from "@/app/components/blocks/Copyright";
 import { Button } from "@/app/components/interaction/Button";
-import { useBookingStore } from "@/app/machine";
+import { useBookingStore } from "@/app/machine/machine";
 import FooterImage from "@/public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 
 const shopTimes = [
