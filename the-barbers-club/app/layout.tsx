@@ -19,12 +19,12 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
     <html lang="en">
       <body>
         {!isDev ? (
-          <main>
+          <>
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
             <BookingForm />
-          </main>
+          </>
         ) : (
           <main
             className={`flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen ${manrope.className} `}

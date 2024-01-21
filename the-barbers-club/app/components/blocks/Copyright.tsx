@@ -9,7 +9,8 @@ export const Copyright = () => {
           Volg ons op{" "}
           <a href="https://www.instagram.com/thebarbersclub.nl?igsh=MWJzN3pwNjU4cDdiZA==">
             {<LogoInstagram />}
-          </a>
+          </a>{" "}
+          - Made with ❤️ by Huijs Digital
         </span>
       </div>
     </div>
