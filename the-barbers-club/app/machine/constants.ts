@@ -14,6 +14,16 @@ export const services: Service[] = [
   { name: "Senioren knippen ( 65+)", price: 22 },
 ];
 
+export const shopTimes = [
+  { time: "10:00 - 16:00", label: "Maandag" },
+  { time: "09:00 - 17:00", label: "Dinsdag" },
+  { time: "10:00 - 21:00", label: "Woensdag" },
+  { time: "09:00 - 21:00", label: "Donderdag" },
+  { time: "09:00 - 18:00", label: "Vrijdag" },
+  { time: "08:00 - 18:00", label: "Zaterdag" },
+  { time: "Gesloten", label: "Zondag" },
+];
+
 type Service = {
   readonly name: string;
   readonly price: number;

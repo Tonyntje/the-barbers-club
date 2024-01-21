@@ -37,6 +37,11 @@ h6 {
     font-size: 1em;
 }
 
+a {
+    @apply text-primary-700;
+    @apply underline
+}
+
 .radial-background {
     background: rgb(255, 255, 255);
     background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(227, 227, 227, 1) 100%)

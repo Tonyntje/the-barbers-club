@@ -22,7 +22,7 @@ export const HeroBanner = () => {
         />
         <div className="overlay w-full h-full absolute"></div>
         <div className="max-w-screen-2xl mx-auto px-6 py-40 relative">
-          <h1 className="text-6xl text-white top-slide">
+          <h1 className="text-7xl drop-shadow-md text-white top-slide">
             Let your hair <br /> do the talking
           </h1>
           <div className="h-0.5 w-24 bg-white mb-8"></div>

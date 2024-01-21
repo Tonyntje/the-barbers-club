@@ -1,5 +1,11 @@
 import { Box, Column, Heading, Section } from "@/app/components";
 import { fetchDataUserData } from "@/app/api/services/fetchDataUserData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Reservering is voltooid",
+  description: "Bevesting van een reservering pagina",
+};
 
 export default async function Page({
   params,
