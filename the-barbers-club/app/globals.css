@@ -9,7 +9,7 @@ main p {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', serif; /* Choose your preferred font family */
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 0.5em;
 }
 

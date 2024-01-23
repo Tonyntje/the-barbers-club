@@ -1,6 +1,6 @@
-import { Section } from "@/app/components";
+import { Heading, Section, Spacer } from "@/app/components";
 import { Metadata } from "next";
-import { PhotoGallery } from "@/app/the-barbers-club/components/PhotoGallery";
+import { PhotoGallery } from "./components/PhotoGallery";
 
 export const metadata: Metadata = {
   title: "Foto gallerij",
@@ -16,6 +16,10 @@ export default async function Page({
 }) {
   return (
     <Section spacing={16}>
+      <div className="text-center">
+        <Heading level={1}>Neem een blik in onze mooie Barbers Club</Heading>
+      </div>
+      <Spacer height={8} type="line" />
       <PhotoGallery />
     </Section>
   );

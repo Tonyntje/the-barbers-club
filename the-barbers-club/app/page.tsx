@@ -19,9 +19,42 @@ export default function Home() {
       <HeroBanner />
       <Section spacing={8}>
         <Column cols={3}>
-          <SubBlock title="Vakmanschap" image={Placeholder1} />
-          <SubBlock title="The Barbershop" image={Placeholder2} />
-          <SubBlock title="Tools" image={Placeholder3} />
+          <SubBlock
+            title="Prijzen"
+            image={Placeholder1}
+            description={
+              <a
+                href="./prijzenlijst"
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+              >
+                Bekijk nu
+              </a>
+            }
+          />
+          <SubBlock
+            title="The Barbershop"
+            image={Placeholder2}
+            description={
+              <a
+                href="./prijzenlijst"
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+              >
+                Werk een blik
+              </a>
+            }
+          />
+          <SubBlock
+            title="Contact"
+            image={Placeholder3}
+            description={
+              <a
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+                href="./prijzenlijst"
+              >
+                Routebeschrijving
+              </a>
+            }
+          />
         </Column>
       </Section>
       <Section spacing={16}>
