@@ -5,15 +5,11 @@ import TheBarbersClubFooterLogo from "../../../public/TheBarbersClubFooterLogo.s
 import { Column } from "@/app/components/utilities/Column";
 import Heading from "@/app/components/content/Heading";
 import { Copyright } from "@/app/components/blocks/Copyright";
-import { Button } from "@/app/components/interaction/Button";
-import { useBookingStore } from "@/app/machine/machine";
 import FooterImage from "@/public/photos/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
+import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
 
 export const Footer = () => {
-  const isOpen = useBookingStore((state) => state.isOpen);
-  const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
-
   return (
     <footer className="w-full text-white relative">
       <Image
@@ -59,12 +55,7 @@ export const Footer = () => {
           <div className="sm:col-span-2 relative px-6">
             <Heading level={3}>Openingstijden</Heading>
             <ShopTimes />
-            <Button
-              type="button"
-              variant="primary"
-              label="Afspraak maken"
-              onClick={() => setBookingStatus(isOpen)}
-            />
+            <BookingFormButton />
           </div>
         </Column>
       </div>

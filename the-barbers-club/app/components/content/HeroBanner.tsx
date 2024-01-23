@@ -1,7 +1,6 @@
-import { Button } from "@/app/components/interaction/Button";
-import { ArrowRight } from "@carbon/icons-react";
 import HeroImage from "../../../public/photos/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
+import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
 
 export const HeroBanner = () => {
   return (
@@ -26,12 +25,7 @@ export const HeroBanner = () => {
             Let your hair <br /> do the talking
           </h1>
           <div className="h-0.5 w-24 bg-white mb-8"></div>
-          <Button
-            type="button"
-            variant="primary"
-            label="Maak een afspraak"
-            icon={<ArrowRight />}
-          />
+          <BookingFormButton />
         </div>
       </div>
     </section>

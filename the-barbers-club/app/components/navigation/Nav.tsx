@@ -1,5 +1,6 @@
-import { Button } from "@/app/components/interaction/Button";
-import { ArrowRight } from "@carbon/icons-react";
+"use client";
+
+import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
 
 const NavLink = ({
   label,
@@ -22,13 +23,7 @@ const NavLink = ({
   );
 };
 
-export const Nav = ({
-  isOpen,
-  setBookingForm,
-}: {
-  readonly isOpen?: boolean;
-  readonly setBookingForm?: (state: boolean) => void;
-}) => {
+export const Nav = () => {
   return (
     <nav className="flex items-center gap-12 text-lg">
       <div className="flex items-center gap-12 absolute -top-[200px] sm:top-0 sm:relative ">
@@ -36,15 +31,7 @@ export const Nav = ({
         <NavLink label="The barbers Club" href="/the-barbers-club/" />
         <NavLink label="Contact" href="/contact/" />
       </div>
-      <Button
-        variant="primary"
-        type="button"
-        onClick={
-          setBookingForm && isOpen ? () => setBookingForm(isOpen) : undefined
-        }
-        label="Reserveer"
-        icon={<ArrowRight />}
-      />
+      <BookingFormButton />
     </nav>
   );
 };

@@ -18,6 +18,13 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
 
   return (
     <html lang="en">
+      <head>
+        <title>The Barbers Club</title>
+        <meta
+          name="facebook-domain-verification"
+          content="h5rdh5rmyb7zbwfparykyqjgveptvz"
+        />
+      </head>
       <body>
         {!isDev ? (
           <>

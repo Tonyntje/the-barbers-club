@@ -37,15 +37,15 @@ export const BookingForm = () => {
   return (
     <>
       {isOpen ? (
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form className="top-slide" onSubmit={handleSubmit(submitHandler)}>
           <div className="fixed border rounded-lg shadow-2xl right-6 p-12 bottom-6 bg-neutral-100 w-full max-w-[450px] min-w-[200px]">
             <div
               onClick={() => setBookingStatus(isOpen)}
-              className='bg-neutral-"00 rounded-lg inline-block absolute right-2 top-2 cursor-pointer'
+              className="bg-neutral-100 rounded-lg inline-block absolute right-2 top-2 cursor-pointer"
             >
               <Subtract size={24} />
             </div>
-            <div className="top-slide">
+            <div className="top-slide-slow">
               <div className="mx-auto w-fit mb-6">
                 <Image
                   width="200"

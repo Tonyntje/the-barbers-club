@@ -12,6 +12,8 @@ import {
 import Placeholder1 from "@/public/photos/the-barbers-club-buitenkant-ingang.jpg";
 import Placeholder2 from "@/public/photos/the-barbers-club-interior-design.jpg";
 import Placeholder3 from "@/public/photos/the-barbers-club-interior-from-the-inside.jpg";
+import HeroImage from "@/public/photos/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -24,7 +26,7 @@ export default function Home() {
             image={Placeholder1}
             description={
               <a
-                href="./prijzenlijst"
+                href="./prijzen"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
                 Bekijk nu
@@ -36,7 +38,7 @@ export default function Home() {
             image={Placeholder2}
             description={
               <a
-                href="./prijzenlijst"
+                href="./the-barbers-club"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
                 Werk een blik
@@ -49,7 +51,7 @@ export default function Home() {
             description={
               <a
                 className="bg-white px-4 py-2 rounded-lg no-underline"
-                href="./prijzenlijst"
+                href="./contact"
               >
                 Routebeschrijving
               </a>
@@ -100,6 +102,21 @@ export default function Home() {
               garant voor een bezoek waarbij jij je op je best voelt.
             </p>
           </Box>
+          <div className="relative w-full h-full overflow-hidden rounded-lg">
+            <Image
+              priority
+              alt="The Barbers Club fade"
+              src={HeroImage}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+          </div>
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />

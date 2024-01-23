@@ -1,5 +1,5 @@
-import { Button, CenterWrapper, Heading } from "@/app/components";
-import { ArrowRight } from "@carbon/icons-react";
+import { CenterWrapper, Heading } from "@/app/components";
+import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
 
 export const CallToActionSection = () => (
   <CenterWrapper>
@@ -9,11 +9,6 @@ export const CallToActionSection = () => (
       bestemming is voor mannen die streven naar stijlvolle perfectie. Laat ons
       jouw look transformeren en ervaar de finesse van echt barbiersvakmanschap.
     </p>
-    <Button
-      type="button"
-      variant="primary"
-      label="Maak een afspraak"
-      icon={<ArrowRight />}
-    />
+    <BookingFormButton />
   </CenterWrapper>
 );
