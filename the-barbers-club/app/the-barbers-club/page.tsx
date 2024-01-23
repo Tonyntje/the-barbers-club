@@ -1,4 +1,4 @@
-import { Heading, Section, Spacer } from "@/app/components";
+import { Heading, Section, Spacer, SubHeader } from "@/app/components";
 import { Metadata } from "next";
 import { PhotoGallery } from "./components/PhotoGallery";
 
@@ -15,12 +15,15 @@ export default async function Page({
   searchParams: { [key: string]: string };
 }) {
   return (
-    <Section spacing={16}>
-      <div className="text-center">
-        <Heading level={1}>Neem een blik in onze mooie Barbers Club</Heading>
-      </div>
-      <Spacer height={8} type="line" />
-      <PhotoGallery />
-    </Section>
+    <>
+      <SubHeader />
+      <Section spacing={16}>
+        <div className="text-center">
+          <Heading level={1}>Neem een blik in onze mooie Barbers Club</Heading>
+        </div>
+        <Spacer height={8} type="line" />
+        <PhotoGallery />
+      </Section>
+    </>
   );
 }

@@ -4,6 +4,8 @@ export * from "./blocks/Header";
 export * from "./blocks/Section";
 export * from "./blocks/Footer";
 export * from "./blocks/Copyright";
+export * from "./blocks/ShopTimes";
+export * from "./blocks/SubHeader";
 
 // Content
 export * from "./content/Heading";
@@ -13,6 +15,7 @@ export * from "./content/PageHeader";
 
 // Interaction
 export * from "./interaction/Button";
+export * from "./interaction/BookingFormButton";
 
 // Navigation
 export * from "./navigation/Nav";
@@ -28,4 +31,6 @@ export * from "./utilities/SubBlock";
 export * from "./form/inputText";
 export * from "./form/inputSelect";
 export * from "./form/inputDate";
+
+// Booking-form
 export * from "./booking-form/BookingForm";

@@ -51,6 +51,10 @@ main a {
     background: linear-gradient(45deg, black, transparent);
 }
 
+.bg-gradient {
+    background-image: linear-gradient(to right top, #14522e, #14522e66);
+}
+
 .top-slide {
     position: relative;
     opacity: 1;
