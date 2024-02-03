@@ -7,6 +7,7 @@ import { Manrope } from "next/font/google";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { development } from "@/app/api/services/apiSettings";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -14,9 +15,6 @@ const manrope = Manrope({
 });
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
-  const isDev = false;
-  console.log(isDev ? "Is Dev" : "Is live");
-
   return (
     <html lang="en">
       <head>
@@ -27,7 +25,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         />
       </head>
       <body>
-        {!isDev ? (
+        {!development ? (
           <>
             <Header />
             <main>{children}</main>
