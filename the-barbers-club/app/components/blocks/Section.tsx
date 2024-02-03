@@ -12,7 +12,7 @@ export const Section = ({
 }) => {
   return (
     <section
-      className={classNames("w-full border-b-2", {
+      className={classNames("relative w-full border-b-2", {
         "bg-neutral-100": !background,
         "bg-neutral-200": background === "grey",
       })}

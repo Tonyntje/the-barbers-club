@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+  CallToActionSection,
   CenterWrapper,
   Column,
   Heading,
@@ -9,10 +9,11 @@ import {
   Spacer,
   SubBlock,
 } from "@/app/components";
-import { ArrowRight } from "@carbon/icons-react";
-import Placeholder1 from "../public/the-barbers-club-buitenkant-ingang.jpg";
-import Placeholder2 from "../public/the-barbers-club-interior-design.jpg";
-import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jpg";
+import Placeholder1 from "@/public/photos/the-barbers-club-buitenkant-ingang.jpg";
+import Placeholder2 from "@/public/photos/the-barbers-club-interior-design.jpg";
+import Placeholder3 from "@/public/photos/the-barbers-club-interior-from-the-inside.jpg";
+import HeroImage from "@/public/photos/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,9 +21,42 @@ export default function Home() {
       <HeroBanner />
       <Section spacing={8}>
         <Column cols={3}>
-          <SubBlock title="Vakmanschap" image={Placeholder1} />
-          <SubBlock title="The Barbershop" image={Placeholder2} />
-          <SubBlock title="Tools" image={Placeholder3} />
+          <SubBlock
+            title="Prijzen"
+            image={Placeholder1}
+            description={
+              <a
+                href="./prijzen"
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+              >
+                Bekijk nu
+              </a>
+            }
+          />
+          <SubBlock
+            title="The Barbershop"
+            image={Placeholder2}
+            description={
+              <a
+                href="./the-barbers-club"
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+              >
+                Werk een blik
+              </a>
+            }
+          />
+          <SubBlock
+            title="Contact"
+            image={Placeholder3}
+            description={
+              <a
+                className="bg-white px-4 py-2 rounded-lg no-underline"
+                href="./contact"
+              >
+                Routebeschrijving
+              </a>
+            }
+          />
         </Column>
       </Section>
       <Section spacing={16}>
@@ -68,23 +102,24 @@ export default function Home() {
               garant voor een bezoek waarbij jij je op je best voelt.
             </p>
           </Box>
+          <div className="relative w-full h-full overflow-hidden rounded-lg">
+            <Image
+              priority
+              alt="The Barbers Club fade"
+              src={HeroImage}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+          </div>
         </Column>
         <Spacer height={16} type="line" />
-        <CenterWrapper>
-          <Heading level={3}>Waar wacht je nog op?</Heading>
-          <p>
-            Maak vandaag nog een afspraak en ontdek waarom The Barbers Club dé
-            bestemming is voor mannen die streven naar stijlvolle perfectie.
-            Laat ons jouw look transformeren en ervaar de finesse van echt
-            barbiersvakmanschap.
-          </p>
-          <Button
-            type="button"
-            variant="primary"
-            label="Maak een afspraak"
-            icon={<ArrowRight />}
-          />
-        </CenterWrapper>
+        <CallToActionSection />
       </Section>
     </>
   );
