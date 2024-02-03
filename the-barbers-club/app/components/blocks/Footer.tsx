@@ -41,8 +41,8 @@ export const Footer = () => {
               >
                 Stalpaert van der Wieleweg 45, Delft
               </a>
-              , bel ons via <a href="tel:+3107012345678"></a>, of stuur een
-              e-mail naar{" "}
+              , bel ons via <a href="tel:+31639132769"></a>, of stuur een e-mail
+              naar{" "}
               <a
                 className="text-primary-500 underline"
                 href="mailto:info@thebarbersclub.nl"

@@ -15,6 +15,8 @@ const manrope = Manrope({
 });
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
+  const isDev = Boolean(development);
+
   return (
     <html lang="en">
       <head>
@@ -25,7 +27,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         />
       </head>
       <body>
-        {!development ? (
+        {!isDev ? (
           <>
             <Header />
             <main>{children}</main>

@@ -33,7 +33,7 @@ export const TopBar = () => {
           <span>
             Bel of App{" "}
             <a className="font-bold text-primary-600" href="tel:0701234123402">
-              +070 1234 1234 02
+              +31 6 391 327 69
             </a>
           </span>
         </div>
