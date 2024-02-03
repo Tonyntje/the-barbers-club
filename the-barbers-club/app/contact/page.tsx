@@ -18,7 +18,7 @@ export default async function Page() {
             <Heading level={1}>Contact</Heading>
             <div className="font-bold">Informatie</div>
             <p>
-              Denneweg 19 2514 CC, Den Haag
+              Stalpaert van der Wieleweg 45, 2612 SV Delft
               <br />
               🗺️{" "}
               <a href="https://maps.app.goo.gl/KWxpXH4QcPzE2apq6">
