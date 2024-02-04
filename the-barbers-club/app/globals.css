@@ -37,6 +37,32 @@ h6 {
     font-size: 1em;
 }
 
+@media screen and (max-width: 668px) {
+    h1 {
+        font-size: 2.25em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.75em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1.25em;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+}
+
 main a {
     @apply text-primary-700;
     @apply underline
@@ -104,7 +130,7 @@ main a {
     height: 20px;
     border-radius: 50%;
     top: 40%;
-    left: 0%;
+    left: 0;
 }
 
 .dot-container {

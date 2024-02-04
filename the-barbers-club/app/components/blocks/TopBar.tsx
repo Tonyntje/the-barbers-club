@@ -20,7 +20,7 @@ export const TopBar = () => {
   return (
     <div className="w-full bg-neutral-200 text-neutral-700">
       <div className="max-w-screen-2xl sm:flex sm:justify-between mx-auto px-6 p-3">
-        <div className="flex gap-2 items-center">
+        <div className="flex mb-2 sm:mb-0 gap-2 items-center">
           <Stars />
           <span className="font-black text-sm">(60+)</span>
           <span>sterren op</span>
@@ -28,7 +28,7 @@ export const TopBar = () => {
             <Image src={TreatwellLogo} alt="Treatwell Logo" />
           </a>
         </div>
-        <div className="flex gap-2">
+        <div className="hidden sm:flex gap-2">
           <span className="font-bold">Liever direct contact?</span>
           <span>
             Bel of App{" "}
