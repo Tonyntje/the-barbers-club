@@ -16,7 +16,7 @@ export const Button = ({ type, variant, label, icon, onClick }: Button) => {
       })}
     >
       <div
-        className={classNames("py-2 px-6 flex items-center gap-2 ", {
+        className={classNames("py-2 px-4 sm:px-6 flex items-center gap-2 ", {
           "transition-all hover:px-4 hover:gap-6": icon,
         })}
       >
