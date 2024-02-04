@@ -30,7 +30,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         {!isDev ? (
           <>
             <Header />
-            <main>{children}</main>
+            <main className={manrope.className}>{children}</main>
             <Footer />
             <Suspense fallback={null}>
               <FacebookPixelEvents />
