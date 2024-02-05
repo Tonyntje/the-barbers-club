@@ -39,7 +39,7 @@ export default function Home() {
             image={Placeholder2}
             description={
               <a
-                href="/the-barbers-club-"
+                href="/the-barbers-club/"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
                 Werk een blik
