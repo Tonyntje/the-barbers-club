@@ -6,7 +6,7 @@ import {
 } from "@/app/components";
 import { services } from "@/app/machine/constants";
 import Image from "next/image";
-import FooterImage from "@/public/photos/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
+import FooterImage from "@/public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 
 export default async function Page() {
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
+import Link from "next/link";
 
 const NavLink = ({
   label,
@@ -10,7 +11,7 @@ const NavLink = ({
   readonly href: string;
 }) => {
   return (
-    <a
+    <Link
       className={[
         "relative font-bold py-3 text-neutral-950",
         'after:transition-all after:opacity-0 after:bg-primary-700 after:absolute after:bottom-0 after:left-0 after:h-1 after:content-[""] after:w-full',
@@ -19,7 +20,7 @@ const NavLink = ({
       href={href}
     >
       {label}
-    </a>
+    </Link>
   );
 };
 

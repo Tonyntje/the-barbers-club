@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  outputFileTracing: false,
+  images: {
+    unoptimized: true,
+  },
+  // outputFileTracing: false,
   output: "export",
 };
 

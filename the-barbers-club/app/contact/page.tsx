@@ -1,5 +1,5 @@
 import { Column, Heading, Section, Spacer } from "@/app/components";
-import ContactImage from "@/public/photos/the-barbers-club-interior-from-the-inside.jpg";
+import ContactImage from "@/public/the-barbers-club-interior-from-the-inside.jpg";
 import Image from "next/image";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
 import { Metadata } from "next";

@@ -1,4 +1,4 @@
-import HeroImage from "../../../public/photos/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
+import HeroImage from "../../../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
 
 export const SubHeader = () => {

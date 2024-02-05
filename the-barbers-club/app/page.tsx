@@ -9,11 +9,12 @@ import {
   Spacer,
   SubBlock,
 } from "@/app/components";
-import Placeholder1 from "@/public/photos/the-barbers-club-buitenkant-ingang.jpg";
-import Placeholder2 from "@/public/photos/the-barbers-club-interior-design.jpg";
-import Placeholder3 from "@/public/photos/the-barbers-club-interior-from-the-inside.jpg";
-import HeroImage from "@/public/photos/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
+import Placeholder1 from "../public/the-barbers-club-buitenkant-ingang.jpg";
+import Placeholder2 from "../public/the-barbers-club-interior-design.jpg";
+import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jpg";
+import HeroImage from "../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,12 +26,12 @@ export default function Home() {
             title="Prijzen"
             image={Placeholder1}
             description={
-              <a
-                href="./prijzen"
+              <Link
+                href="/prijzen/"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
                 Bekijk nu
-              </a>
+              </Link>
             }
           />
           <SubBlock
@@ -38,7 +39,7 @@ export default function Home() {
             image={Placeholder2}
             description={
               <a
-                href="./the-barbers-club"
+                href="/the-barbers-club-"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
                 Werk een blik
@@ -51,7 +52,7 @@ export default function Home() {
             description={
               <a
                 className="bg-white px-4 py-2 rounded-lg no-underline"
-                href="./contact"
+                href="/contact-"
               >
                 Routebeschrijving
               </a>

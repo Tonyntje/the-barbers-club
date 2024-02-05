@@ -6,7 +6,6 @@ import phoneIcon from "./../public/phone--incoming.svg";
 import { Manrope } from "next/font/google";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { development } from "@/app/api/services/apiSettings";
 
 const manrope = Manrope({
@@ -36,7 +35,6 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
               <FacebookPixelEvents />
               <BookingForm />
             </Suspense>
-            <SpeedInsights />
           </>
         ) : (
           <main
