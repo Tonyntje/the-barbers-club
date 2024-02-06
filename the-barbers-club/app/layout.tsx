@@ -7,6 +7,7 @@ import { Manrope } from "next/font/google";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
 import { development } from "@/app/api/services/apiSettings";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
             <Suspense fallback={null}>
               <FacebookPixelEvents />
               <BookingForm />
+              <SpeedInsights />
             </Suspense>
           </>
         ) : (
