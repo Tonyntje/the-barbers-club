@@ -1,4 +1,5 @@
 import { Box, Column, Heading, Section } from "@/app/components";
+import { fetchDataUserData } from "@/app/api/services/fetchDataUserData";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +14,8 @@ export default async function Page({
   params: { slug: string };
   searchParams: { [key: string]: string };
 }) {
-  // const orderNumber = searchParams?.ordernummer;
-  // const data = orderNumber && (await fetchDataUserData(orderNumber));
-  // const { id, name, phone, service} = data
+  const orderNumber = searchParams?.ordernummer;
+  const data = orderNumber && (await fetchDataUserData(orderNumber));
 
   return (
     <Section spacing={16}>
@@ -26,16 +26,16 @@ export default async function Page({
         <div id="emitter"></div>
         <Box>
           <p>
-            <strong>Uw ordernummer</strong>
+            <strong>Uw ordernummer</strong> {data.id}
           </p>
           <p>
-            <strong>Uw naam</strong>
+            <strong>Uw naam</strong> {data.name}
           </p>
           <p>
-            <strong>Uw telefoon nummer</strong>
+            <strong>Uw telefoon nummer</strong> {data.phone}
           </p>
           <p>
-            <strong>Uw gekozen dienst</strong>
+            <strong>Uw gekozen dienst</strong> {data.service}
           </p>
         </Box>
       </Column>
