@@ -52,7 +52,7 @@ export default function Home() {
             description={
               <a
                 className="bg-white px-4 py-2 rounded-lg no-underline"
-                href="/contact-"
+                href="/contact/"
               >
                 Routebeschrijving
               </a>
