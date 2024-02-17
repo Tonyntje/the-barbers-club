@@ -26,7 +26,7 @@ export default async function Page() {
               </a>
             </p>
             <p>
-              Tel: <a href="tel:+31707434623">+3170 743 46 23</a>
+              Tel: <a href="tel:+31639132769">+31 6 391 327 69</a>
             </p>
             <Spacer type="line" height={8} />
             <Heading level={4}>Openingstijden</Heading>
