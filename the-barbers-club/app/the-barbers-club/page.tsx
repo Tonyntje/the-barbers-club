@@ -21,7 +21,9 @@ export default async function Page({
       <SubHeader />
       <Section spacing={16}>
         <div className="text-center">
-          <Heading level={1}>Neem een blik in onze mooie Barbers Club</Heading>
+          <Heading level={1}>
+            Neem een blik in onze mooie Barbers Club & onze modellen
+          </Heading>
         </div>
         <Spacer height={8} type="line" />
         <PhotoGallery />

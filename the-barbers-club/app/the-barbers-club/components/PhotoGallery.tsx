@@ -8,8 +8,6 @@ import classNames from "classnames";
 export const PhotoGallery = () => {
   const [isOpen, setIsOpen] = useState<null | number>(null);
 
-  console.log(isOpen);
-
   const photoCollection = photos.map((image, index) => {
     return (
       <div key={index}>
@@ -31,20 +29,12 @@ export const PhotoGallery = () => {
           alt="The Barbers Club fade"
           src={image}
           placeholder="blur"
+          height={800}
           quality={100}
           className={classNames(
-            "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 z-20",
+            "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 z-30",
             {
               invisible: isOpen !== index,
-            },
-          )}
-        />
-        <div
-          onClick={() => setIsOpen(null)}
-          className={classNames(
-            "left-0 top-0 opacity-30 fixed block bg-neutral-950 w-screen h-screen transition select-none",
-            {
-              invisible: isOpen === null,
             },
           )}
         />
@@ -52,5 +42,18 @@ export const PhotoGallery = () => {
     );
   });
 
-  return <div className="columns-2 lg:columns-3 gap-6">{photoCollection}</div>;
+  return (
+    <div className="columns-2 lg:columns-3 gap-6">
+      {photoCollection}
+      <div
+        onClick={() => setIsOpen(null)}
+        className={classNames(
+          "left-0 top-0 opacity-80 z-20 fixed block bg-neutral-950 w-screen h-screen transition select-none",
+          {
+            invisible: isOpen === null,
+          },
+        )}
+      />
+    </div>
+  );
 };
