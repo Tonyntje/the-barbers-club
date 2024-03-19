@@ -42,7 +42,7 @@ export default function Home() {
                 href="/the-barbers-club/"
                 className="bg-white px-4 py-2 rounded-lg no-underline"
               >
-                Werk een blik
+                Werp een blik
               </a>
             }
           />
