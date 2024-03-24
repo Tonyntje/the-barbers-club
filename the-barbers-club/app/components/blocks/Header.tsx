@@ -14,15 +14,11 @@ import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
 
 export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth ?? 0);
+  const [windowWidth, setWindowWidth] = useState(0);
   const isMobile = windowWidth < 768;
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", () =>
-        setWindowWidth(window.innerWidth),
-      );
-    }
+    window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
   }, []);
 
   return (
