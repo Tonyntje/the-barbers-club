@@ -17,7 +17,7 @@ export const Header = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const isMobile = windowWidth < 768;
 
-  if (window !== undefined) {
+  if (typeof window !== "undefined") {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
     console.log(windowWidth);
   }
