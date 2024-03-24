@@ -10,16 +10,17 @@ import {
   SheetTrigger,
   TopBar,
 } from "@/app/components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 
 export const Header = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const isMobile = windowWidth < 768;
 
-  useEffect(() => {
+  if (window !== undefined) {
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
-  }, []);
+    console.log(windowWidth);
+  }
 
   return (
     <header className="w-full bg-white border border-b-2 ">
