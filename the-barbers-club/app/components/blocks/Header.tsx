@@ -14,10 +14,12 @@ import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 
 export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth ?? 0);
   const isMobile = windowWidth < 768;
 
-  window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+  }
 
   return (
     <header className="w-full bg-white border border-b-2 ">
