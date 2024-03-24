@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
 
 export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth ?? 0);
   const isMobile = windowWidth < 768;
 
   useEffect(() => {
