@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  DateInput,
-  Heading,
-  SelectInput,
-  TextInput,
-} from "@/app/components";
+import { Box, Button, Heading, SelectInput, TextInput } from "@/app/components";
 import { Calendar, Subtract } from "@carbon/icons-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -17,10 +10,22 @@ import Image from "next/image";
 import { useBookingStore } from "@/app/machine/machine";
 import phoneIcon from "@/public/phone--incoming.svg";
 import { services } from "@/app/machine/constants";
+import { RadioGroup, RadioGroupItem } from "@/app/components/form/radio-group";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/app/components/interaction/popover";
+import classNames from "classnames";
+import { CalendarIcon } from "lucide-react";
+import { ButtonCn } from "@/app/components/button";
+import { CalendarForm } from "@/app/components/form/calendar";
+import { format } from "date-fns";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
-  const { control, handleSubmit, setValue } = useForm();
+  const { control, handleSubmit, setValue, getValues, watch } = useForm();
+  const [date, setDate] = useState<Date>();
 
   const isOpen = useBookingStore((state) => state.isOpen);
   const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
@@ -94,12 +99,43 @@ export const BookingForm = () => {
                           <Heading level={4}>Kies een tijd & datum</Heading>
                         </div>
                         <Box>
-                          <DateInput
-                            name="date"
-                            label="Kies een datum"
-                            setValue={setValue}
-                            control={control}
-                          />
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <ButtonCn
+                                variant={"outline"}
+                                className={classNames(
+                                  "w-[280px] justify-start text-left font-normal",
+                                  !date && "text-muted-foreground",
+                                )}
+                              >
+                                <CalendarIcon className="mr-2 h-4 w-4" />
+                                {date ? (
+                                  format(date, "PPP")
+                                ) : (
+                                  <span>Kies een datum</span>
+                                )}
+                              </ButtonCn>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0">
+                              <CalendarForm
+                                mode="single"
+                                selected={date}
+                                onSelect={setDate}
+                                initialFocus
+                              />
+                            </PopoverContent>
+                          </Popover>
+                          {date && (
+                            <RadioGroup className="top-slide">
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem
+                                  value="option-one"
+                                  id="option-one"
+                                />
+                                <label htmlFor="option-one">Option One</label>
+                              </div>
+                            </RadioGroup>
+                          )}
                         </Box>
                         <div className="flex mt-4 justify-between">
                           <Button
@@ -112,7 +148,7 @@ export const BookingForm = () => {
                             onClick={() => setStepStatus(3)}
                             type="button"
                             variant="primary"
-                            label="Datum & Tijd kiezen"
+                            label="Reserveren"
                           />
                         </div>
                       </div>
