@@ -16,12 +16,7 @@ import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
 import Image from "next/image";
 import { useBookingStore } from "@/app/machine/machine";
 import phoneIcon from "@/public/phone--incoming.svg";
-
-const services = [
-  { value: "wash", label: "🌊 Haar wassen", details: "Details for washing" },
-  { value: "cut", label: "✂️ Haar knippen", details: "Details for cutting" },
-  { value: "shave", label: "🪒 Baard scheren", details: "Details for shaving" },
-];
+import { services } from "@/app/machine/constants";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
@@ -35,7 +30,7 @@ export const BookingForm = () => {
     return false;
   };
 
-  const isDev = true;
+  const isDev = false;
 
   return (
     <>

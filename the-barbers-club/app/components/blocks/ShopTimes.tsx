@@ -16,7 +16,9 @@ export const ShopTimes = ({ mode }: { readonly mode?: "light" }) => (
         >
           {label}
         </span>{" "}
-        <span>{time}</span>
+        <span>
+          {time === "Gesloten" ? "Gesloten" : `${time.from}:00 - ${time.to}:00`}
+        </span>
       </li>
     ))}
   </ul>
