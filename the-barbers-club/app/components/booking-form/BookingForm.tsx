@@ -21,6 +21,7 @@ import { CalendarIcon } from "lucide-react";
 import { ButtonCn } from "@/app/components/button";
 import { CalendarForm } from "@/app/components/form/calendar";
 import { format } from "date-fns";
+import { nl } from "date-fns/locale";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
@@ -104,13 +105,13 @@ export const BookingForm = () => {
                               <ButtonCn
                                 variant={"outline"}
                                 className={classNames(
-                                  "w-[280px] justify-start text-left font-normal",
+                                  "w-[280px] justify-start text-left font-normal mb-4",
                                   !date && "text-muted-foreground",
                                 )}
                               >
                                 <CalendarIcon className="mr-2 h-4 w-4" />
                                 {date ? (
-                                  format(date, "PPP")
+                                  format(date, "PPP", { locale: nl })
                                 ) : (
                                   <span>Kies een datum</span>
                                 )}

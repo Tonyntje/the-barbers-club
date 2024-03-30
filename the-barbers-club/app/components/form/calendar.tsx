@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
+import { nl } from "date-fns/locale";
 import { buttonVariants } from "@/app/components/button";
 import classNames from "classnames";
 
@@ -19,6 +20,7 @@ function CalendarForm({
 
   return (
     <DayPicker
+      locale={nl}
       showOutsideDays={showOutsideDays}
       disabled={disabledPastDays}
       className={classNames("p-3", className)}
