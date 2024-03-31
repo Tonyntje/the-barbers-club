@@ -2,7 +2,7 @@
 
 import { Box, Button, Heading, SelectInput, TextInput } from "@/app/components";
 import { Calendar, Subtract } from "@carbon/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
 import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
@@ -26,6 +26,14 @@ import { nl } from "date-fns/locale";
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
   const { control, handleSubmit, setValue, getValues, watch } = useForm();
+
+  useEffect(() => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    setDate(tomorrow);
+  }, []);
+
   const [date, setDate] = useState<Date>();
 
   const isOpen = useBookingStore((state) => state.isOpen);
@@ -35,6 +43,8 @@ export const BookingForm = () => {
     console.log(stepStatus);
     return false;
   };
+
+  console.log(date);
 
   const isDev = false;
 
