@@ -22,10 +22,11 @@ import { ButtonCn } from "@/app/components/button";
 import { CalendarForm } from "@/app/components/form/calendar";
 import { format } from "date-fns";
 import { nl } from "date-fns/locale";
+import { getTimesForWeekDay } from "@/app/components/booking-form/helpers/getTimesForWeekDay";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
-  const { control, handleSubmit, setValue, getValues, watch } = useForm();
+  const { control, handleSubmit } = useForm();
 
   useEffect(() => {
     const today = new Date();
@@ -44,8 +45,7 @@ export const BookingForm = () => {
     return false;
   };
 
-  console.log(date);
-
+  const times = getTimesForWeekDay(date);
   const isDev = false;
 
   return (
@@ -121,7 +121,7 @@ export const BookingForm = () => {
                               >
                                 <CalendarIcon className="mr-2 h-4 w-4" />
                                 {date ? (
-                                  format(date, "PPP", { locale: nl })
+                                  format(date, "PPPP", { locale: nl })
                                 ) : (
                                   <span>Kies een datum</span>
                                 )}
@@ -137,14 +137,24 @@ export const BookingForm = () => {
                             </PopoverContent>
                           </Popover>
                           {date && (
-                            <RadioGroup className="top-slide">
-                              <div className="flex items-center space-x-2">
-                                <RadioGroupItem
-                                  value="option-one"
-                                  id="option-one"
-                                />
-                                <label htmlFor="option-one">Option One</label>
-                              </div>
+                            <RadioGroup className="top-slide inline grid-cols-4 gap-1">
+                              {times?.map(({ flat, normal }) => {
+                                return (
+                                  <div className="inline" key={flat}>
+                                    <RadioGroupItem
+                                      value={flat}
+                                      id={flat}
+                                      className="hidden"
+                                    />
+                                    <label
+                                      className="w-full h-full bg-white rounded-lg text-center hover:cursor-pointer hover:outline-1 hover:outline-emerald-700"
+                                      htmlFor={flat}
+                                    >
+                                      {normal}
+                                    </label>
+                                  </div>
+                                );
+                              })}
                             </RadioGroup>
                           )}
                         </Box>
