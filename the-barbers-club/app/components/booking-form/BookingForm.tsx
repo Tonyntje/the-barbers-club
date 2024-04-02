@@ -25,7 +25,7 @@ import { nl } from "date-fns/locale";
 import { getTimesForWeekDay } from "@/app/components/booking-form/helpers/getTimesForWeekDay";
 
 export const BookingForm = () => {
-  const [stepStatus, setStepStatus] = useState(1);
+  const [stepStatus, setStepStatus] = useState(2);
   const { control, handleSubmit } = useForm();
 
   useEffect(() => {
@@ -36,14 +36,16 @@ export const BookingForm = () => {
   }, []);
 
   const [date, setDate] = useState<Date>();
+  const [time, setTime] = useState<String>();
 
   const isOpen = useBookingStore((state) => state.isOpen);
   const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
 
   const submitHandler = () => {
-    console.log(stepStatus);
     return false;
   };
+
+  console.log(time)
 
   const times = getTimesForWeekDay(date);
   const isDev = false;
@@ -104,7 +106,6 @@ export const BookingForm = () => {
                     </>
                   )}
                   {stepStatus === 2 && (
-                    <>
                       <div className="top-slide">
                         <div className="text-center">
                           <Heading level={4}>Kies een tijd & datum</Heading>
@@ -137,17 +138,21 @@ export const BookingForm = () => {
                             </PopoverContent>
                           </Popover>
                           {date && (
-                            <RadioGroup className="top-slide inline grid-cols-4 gap-1">
+                            <RadioGroup id="tijden" className="top-slide inline grid-cols-4 gap-1">
                               {times?.map(({ flat, normal }) => {
+                                console.log(flat, time)
+
                                 return (
-                                  <div className="inline" key={flat}>
+                                  <div className="inline" key={flat} onClick={() => setTime(flat)}>
                                     <RadioGroupItem
                                       value={flat}
                                       id={flat}
                                       className="hidden"
                                     />
                                     <label
-                                      className="w-full h-full bg-white rounded-lg text-center hover:cursor-pointer hover:outline-1 hover:outline-emerald-700"
+                                      className={classNames("hover:bg-neutral-200 block border-2 w-full h-full bg-white rounded-lg text-center hover:cursor-pointer hover:outline-1 hover:outline-emerald-700", {
+                                        'border-primary-700 ': flat === time
+                                      })}
                                       htmlFor={flat}
                                     >
                                       {normal}
@@ -173,7 +178,6 @@ export const BookingForm = () => {
                           />
                         </div>
                       </div>
-                    </>
                   )}
                   {stepStatus === 3 && (
                     <>
