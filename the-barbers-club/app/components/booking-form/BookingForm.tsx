@@ -12,7 +12,7 @@ import { Informatie } from "@/app/components/booking-form/helpers/steps/Informat
 import { Betalen } from "@/app/components/booking-form/helpers/steps/Betalen";
 
 export const BookingForm = () => {
-  const [stepStatus, setStepStatus] = useState(2);
+  const [stepStatus, setStepStatus] = useState(1);
   const [date, setDate] = useState<Date>(new Date());
   const [time, setTime] = useState<string>("");
   const { control, getValues } = useForm();
