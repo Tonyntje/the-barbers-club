@@ -7,7 +7,6 @@ import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
 import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
 import Image from "next/image";
 import { useBookingStore } from "@/app/machine/machine";
-import phoneIcon from "@/public/phone--incoming.svg";
 import {DatumTijd} from "@/app/components/booking-form/helpers/steps/DatumTijd";
 import {Informatie} from "@/app/components/booking-form/helpers/steps/Informatie";
 import {Betalen} from "@/app/components/booking-form/helpers/steps/Betalen";
@@ -27,8 +26,6 @@ export const BookingForm = () => {
 
   const isOpen = useBookingStore((state) => state.isOpen);
   const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
-
-  const isDev = false;
 
   return (
     <>
