@@ -3,9 +3,17 @@
 import classNames from "classnames";
 import { CarbonIconProps } from "@carbon/icons-react/es/CarbonIcon";
 
-export const Button = ({ type, variant, label, icon, onClick }: Button) => {
+export const Button = ({
+  type,
+  variant,
+  label,
+  icon,
+  onClick,
+  disabled,
+}: Button) => {
   return (
     <button
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={classNames("rounded-md transition-all", {
@@ -28,6 +36,7 @@ export const Button = ({ type, variant, label, icon, onClick }: Button) => {
 };
 
 type Button = {
+  readonly disabled?: boolean;
   readonly type: "submit" | "button";
   readonly variant: "primary" | "secondary";
   readonly label: string;

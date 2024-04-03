@@ -1,6 +1,6 @@
 "use client";
 
-import { useBookingStore } from "@/app/machine/machine";
+import { useStore } from "@/app/machine/machine";
 import { Button } from "@/app/components";
 import { ArrowRight } from "@carbon/icons-react";
 
@@ -9,8 +9,8 @@ export const BookingFormButton = ({
 }: {
   readonly label?: string;
 }) => {
-  const isOpen = useBookingStore((state) => state.isOpen);
-  const setBookingStatus = useBookingStore((state) => state.setBookingStatus);
+  const isOpen = useStore((state) => state.isOpen);
+  const setBookingStatus = useStore((state) => state.setBookingStatus);
   const setForm = () => setBookingStatus(isOpen);
 
   return (

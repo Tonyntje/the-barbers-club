@@ -12,7 +12,7 @@ export interface BearState {
   setBookingStatus: (state: boolean) => void;
 }
 
-export const useBookingStore = create<BearState>()((set) => ({
+export const useStore = create<BearState>()((set) => ({
   isOpen: false,
   isDev: false,
   setBookingStatus: (state: boolean) => set({ isOpen: !state }),

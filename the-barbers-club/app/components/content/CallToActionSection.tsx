@@ -1,5 +1,5 @@
 import { CenterWrapper, Heading } from "@/app/components";
-import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 
 export const CallToActionSection = () => (
   <CenterWrapper>

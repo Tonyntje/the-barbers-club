@@ -7,7 +7,7 @@ import Heading from "@/app/components/content/Heading";
 import { Copyright } from "@/app/components/blocks/Copyright";
 import FooterImage from "../../../public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
-import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 
 export const Footer = () => {
   return (

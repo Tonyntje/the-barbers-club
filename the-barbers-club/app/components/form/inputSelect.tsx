@@ -21,7 +21,6 @@ export const SelectInput = ({
       <Controller
         name={name}
         control={control}
-        defaultValue=""
         render={({ field }) => (
           <select
             className="border-neutral-200 px-2 py-1 border rounded"

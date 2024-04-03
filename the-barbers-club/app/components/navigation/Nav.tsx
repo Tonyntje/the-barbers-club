@@ -1,6 +1,6 @@
 "use client";
 
-import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 import Link from "next/link";
 import { ArrowRight } from "@carbon/icons-react";
 
