@@ -17,7 +17,7 @@ export const Betalen = ({
   };
 }) => {
   const { service, name, date, time } = orderDetails;
-  const serviceInfo = services.find(({ label }) => service === label);
+  const serviceInfo = services.find(({ value }) => service === value);
   const timeSplit = time.split("");
   const formattedTime =
     timeSplit[0] + timeSplit[1] + ":" + timeSplit[2] + timeSplit[3];
@@ -28,7 +28,7 @@ export const Betalen = ({
         <div className="text-center">
           <Heading level={4}>Bijna klaar!</Heading>
         </div>
-        <Box>
+        <Box size="sm">
           <p className="text-center font-bold mb-4">
             Controleer uw gegevens <br /> voordat u gaat betalen!
           </p>

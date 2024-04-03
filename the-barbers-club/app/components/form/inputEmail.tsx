@@ -1,6 +1,6 @@
 "use client";
 
-import { Control, Controller } from "react-hook-form";
+import { Control, Controller, FieldValues } from "react-hook-form";
 
 export const TextInput = ({
   label,
@@ -9,7 +9,7 @@ export const TextInput = ({
 }: {
   readonly label: string;
   readonly name: string;
-  readonly control: Control | undefined;
+  readonly control: Control<FieldValues> | undefined;
 }) => {
   return (
     <div className="flex flex-col gap-2 mb-4">

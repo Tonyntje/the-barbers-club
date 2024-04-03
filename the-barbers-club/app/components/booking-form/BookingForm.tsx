@@ -17,15 +17,19 @@ export const BookingForm = () => {
   const [time, setTime] = useState<string>("");
   const { control, getValues } = useForm();
 
-  const service = getValues("service") ?? "Mannen knippen";
+  const service = getValues("service") ?? "men-cut";
   const name = getValues("name");
+  const email = getValues("email");
 
   const orderDetails = {
     service,
     name,
+    email,
     date,
     time,
   };
+
+  console.log(orderDetails);
 
   useEffect(() => {
     const today = new Date();
@@ -58,7 +62,11 @@ export const BookingForm = () => {
               </div>
               <BookingStatus status={stepStatus} />
               {stepStatus === 1 && (
-                <Informatie control={control} setStatus={setStepStatus} />
+                <Informatie
+                  control={control}
+                  setStatus={setStepStatus}
+                  name={name}
+                />
               )}
               {stepStatus === 2 && (
                 <DatumTijd
