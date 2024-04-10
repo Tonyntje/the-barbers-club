@@ -29,8 +29,6 @@ export const BookingForm = () => {
     time,
   };
 
-  console.log(orderDetails);
-
   useEffect(() => {
     const today = new Date();
     const tomorrow = new Date(today);

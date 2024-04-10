@@ -3,6 +3,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { format } from "date-fns";
 import { nl } from "date-fns/locale";
 import { services } from "@/app/machine/constants";
+import { createPayment } from "@/app/components/booking-form/services/createPayment";
 
 export const Betalen = ({
   setStatus,
@@ -21,6 +22,14 @@ export const Betalen = ({
   const timeSplit = time.split("");
   const formattedTime =
     timeSplit[0] + timeSplit[1] + ":" + timeSplit[2] + timeSplit[3];
+
+  const isValidPayment = serviceInfo?.label && serviceInfo?.price;
+  const getPayment = () => {
+    const response =
+      isValidPayment && createPayment(serviceInfo.price, serviceInfo.label);
+
+    console.log(response);
+  };
 
   return (
     <>
@@ -52,7 +61,8 @@ export const Betalen = ({
           label="Terug"
         />
         <Button
-          type="submit"
+          type="button"
+          onClick={getPayment}
           variant="primary"
           label="Afrekenen & reserveren"
         />
