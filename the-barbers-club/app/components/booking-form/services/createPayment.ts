@@ -18,6 +18,7 @@ export const createPayment = (amount: number, service: string) => {
 
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Access-Control-Allow-Origin", "*");
   myHeaders.append("Authorization", `Bearer ${paymentApi}`);
 
   const requestOptions = {
