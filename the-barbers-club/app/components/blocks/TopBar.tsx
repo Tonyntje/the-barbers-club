@@ -22,7 +22,7 @@ export const TopBar = () => {
       <div className="max-w-screen-2xl sm:flex sm:justify-between mx-auto px-6 p-3">
         <div className="flex mb-2 sm:mb-0 gap-2 items-center">
           <Stars />
-          <span className="font-black text-sm">(60+)</span>
+          <span className="font-black text-sm">(80+)</span>
           <span>sterren op</span>
           <a href="https://www.treatwell.nl/salon/the-scissors-club/">
             <Image src={TreatwellLogo} alt="Treatwell Logo" />
