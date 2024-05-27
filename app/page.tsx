@@ -15,9 +15,9 @@ import Link from "next/link";
 import { Suspense } from "react";
 import React from "react";
 
-const Placeholder1 = "the-barbers-club-buitenkant-ingang.jpg";
-const Placeholder2 = "the-barbers-club-interior-design.jpg";
-const Placeholder3 = "the-barbers-club-interior-from-the-inside.jpg";
+const Placeholder1 = "/static/the-barbers-club-buitenkant-ingang.jpg";
+const Placeholder2 = "/static/the-barbers-club-interior-design.jpg";
+const Placeholder3 = "/static/the-barbers-club-interior-from-the-inside.jpg";
 
 export default function Home({
   params,
