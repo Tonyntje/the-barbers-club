@@ -1,6 +1,6 @@
 "use client";
 
-import { Control, Controller, FieldValues } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 
 export const TextInput = ({
   label,
@@ -9,7 +9,7 @@ export const TextInput = ({
 }: {
   readonly label: string;
   readonly name: string;
-  readonly control: Control<FieldValues> | undefined;
+  readonly control: Control | undefined;
 }) => {
   return (
     <div className="flex flex-col gap-2 mb-4">
@@ -21,7 +21,7 @@ export const TextInput = ({
         control={control}
         defaultValue=""
         render={({ field }) => (
-          <input className="px-2 py-1 border rounded" {...field} />
+          <input type="email" className="px-2 py-1 border rounded" {...field} />
         )}
       />
     </div>

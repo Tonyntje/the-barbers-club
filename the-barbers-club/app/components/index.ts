@@ -15,7 +15,7 @@ export * from "./content/PageHeader";
 
 // Interaction
 export * from "./interaction/Button";
-export * from "./interaction/BookingFormButton";
+export * from "./booking-form/components/BookingFormButton";
 
 // Navigation
 export * from "./navigation/Nav";

@@ -1,4 +1,5 @@
 import {
+  BookingForm,
   Box,
   CallToActionSection,
   CenterWrapper,
@@ -16,7 +17,15 @@ import HeroImage from "../public/the-barbers-club-ingang-hoofdafbeelding-header.
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string };
+}) {
+  const isDev = searchParams.dev === '25322';
+
   return (
     <>
       <HeroBanner />
@@ -121,6 +130,7 @@ export default function Home() {
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />
+        {isDev && <BookingForm />}
       </Section>
     </>
   );

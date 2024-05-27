@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "calendar-dates": "^2.7.2",
+    "node-fetch": "^3.3.2"
+  }
+}

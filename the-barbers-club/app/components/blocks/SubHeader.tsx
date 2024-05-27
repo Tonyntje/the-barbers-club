@@ -12,7 +12,7 @@ export const SubHeader = () => {
         placeholder="blur"
         quality={100}
         fill
-        sizes="100vw"
+        sizes="(max-width: 1920px) 100vw, (max-width: 1200px) 50vw, 33vw"
         style={{
           objectFit: "cover",
           objectPosition: "center",

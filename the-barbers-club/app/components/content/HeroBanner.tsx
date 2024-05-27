@@ -1,6 +1,6 @@
 import HeroImage from "../../../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
-import { BookingFormButton } from "@/app/components/interaction/BookingFormButton";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 
 export const HeroBanner = () => {
   return (
