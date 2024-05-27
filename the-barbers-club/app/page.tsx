@@ -1,3 +1,5 @@
+"use client"
+
 import {
   BookingForm,
   Box,
@@ -130,7 +132,7 @@ export default function Home({
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />
-        {isDev && <BookingForm />}
+        {isDev &&<BookingForm />}
       </Section>
     </>
   );
