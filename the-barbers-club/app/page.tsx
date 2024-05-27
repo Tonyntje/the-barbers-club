@@ -1,5 +1,3 @@
-"use client"
-
 import {
   BookingForm,
   Box,
@@ -26,7 +24,7 @@ export default function Home({
   params: { slug: string };
   searchParams: { [key: string]: string };
 }) {
-  const isDev = searchParams.dev === '25322';
+  const isDev = searchParams.dev === "25322";
 
   return (
     <>
@@ -132,7 +130,7 @@ export default function Home({
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />
-        {isDev &&<BookingForm />}
+        {isDev && <BookingForm />}
       </Section>
     </>
   );

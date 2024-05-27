@@ -2,5 +2,8 @@
   "dependencies": {
     "calendar-dates": "^2.7.2",
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3"
   }
 }
