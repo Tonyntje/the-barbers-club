@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";
 import phoneIcon from "./../public/phone--incoming.svg";
 import { Manrope } from "next/font/google";
-import { BookingForm, Footer, Header } from "@/app/components";
+import { Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
 
 const manrope = Manrope({
@@ -32,7 +32,6 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
             <Footer />
             <Suspense fallback={null}>
               <FacebookPixelEvents />
-              <BookingForm />
             </Suspense>
           </>
         ) : (
