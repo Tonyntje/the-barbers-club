@@ -16,6 +16,7 @@ import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jp
 import HeroImage from "../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home({
   params,
@@ -130,7 +131,11 @@ export default function Home({
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />
-        {isDev && <BookingForm />}
+        {isDev && (
+          <Suspense fallback={null}>
+            <BookingForm />{" "}
+          </Suspense>
+        )}
       </Section>
     </>
   );
