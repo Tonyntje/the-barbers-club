@@ -1,4 +1,4 @@
-import { ReactNode, Suspense } from "react";
+import { type ReactNode, Suspense } from "react";
 import "./globals.css";
 import Image from "next/image";
 import Logo from "./../public/TheBarbersClubLogo.svg";

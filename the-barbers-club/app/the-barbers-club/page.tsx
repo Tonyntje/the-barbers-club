@@ -1,5 +1,5 @@
 import { Heading, Section, Spacer, SubHeader } from "@/app/components";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { PhotoGallery } from "./components/PhotoGallery";
 import Image from "next/image";
 import HeroImage from "@/public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";

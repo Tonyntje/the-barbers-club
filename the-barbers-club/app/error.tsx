@@ -11,6 +11,7 @@ const ErrorNum = () => {
   );
 };
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export default function Error({
   error,
   reset,
