@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 main p {
     margin-bottom: 2rem;
@@ -8,8 +11,8 @@ main p {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', serif; /* Choose your preferred font family */
-    font-weight: 900;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
     margin-bottom: 0.5em;
 }
 

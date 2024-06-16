@@ -3,14 +3,8 @@ import "./globals.css";
 import Image from "next/image";
 import Logo from "../public/TheBarbersClubLogo.svg";
 import phoneIcon from "../public/phone--incoming.svg";
-import { Manrope } from "next/font/google";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
@@ -28,7 +22,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         {!isDev ? (
           <>
             <Header />
-            <main className={manrope.className}>{children}</main>
+            <main>{children}</main>
             <Footer />
             <Suspense fallback={null}>
               <FacebookPixelEvents />
@@ -36,9 +30,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
             </Suspense>
           </>
         ) : (
-          <main
-            className={`flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen ${manrope.className} `}
-          >
+          <main className="flex items-center justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,rgb(63_201_99_/_40%)_0%,rgb(79_139_27)_100%)] min-h-screen min-w-screen">
             <div className="border-primary-200 sm:shadow-2xl text-center text-white sm:border p-6 sm:p-12 sm:rounded-2xl max-w-[600px]">
               <Image className="mx-auto mb-10" src={Logo} alt={"logo"} />
               <h1 className="drop-shadow-xl">
