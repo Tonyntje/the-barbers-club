@@ -1,11 +1,9 @@
-import React, { type Dispatch, type SetStateAction } from "react";
+import { Box, Button, Heading } from "@/app/components";
+import React, { Dispatch, SetStateAction } from "react";
 import { format } from "date-fns";
 import { nl } from "date-fns/locale";
-import { createPayment } from "../../services/createPayment";
-import Heading from "../../../content/Heading";
-import { Box } from "../../../utilities/Box";
-import { Button } from "../../../interaction/Button";
-import { services } from "../../../../machine/constants";
+import { services } from "@/app/machine/constants";
+import { createPayment } from "@/app/components/booking-form/services/createPayment";
 
 export const Betalen = ({
   setStatus,
@@ -22,9 +20,8 @@ export const Betalen = ({
   const { service, name, date, time } = orderDetails;
   const serviceInfo = services.find(({ value }) => service === value);
   const timeSplit = time.split("");
-  const formattedTime = `${timeSplit[0] + timeSplit[1]}:${timeSplit[2]}${
-    timeSplit[3]
-  }`;
+  const formattedTime =
+    timeSplit[0] + timeSplit[1] + ":" + timeSplit[2] + timeSplit[3];
 
   const isValidPayment = serviceInfo?.label && serviceInfo?.price;
   const getPayment = () => {

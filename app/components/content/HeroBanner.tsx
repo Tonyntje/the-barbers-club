@@ -1,6 +1,6 @@
+import HeroImage from "../../../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
-import { BookingFormButton } from "../../components";
-import React from "react";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 
 export const HeroBanner = () => {
   return (
@@ -9,7 +9,8 @@ export const HeroBanner = () => {
         <Image
           priority
           alt="The Barbers Club fade"
-          src="/static/the-barbers-club-ingang-hoofdafbeelding-header.jpg"
+          src={HeroImage}
+          placeholder="blur"
           quality={100}
           fill
           sizes="100vw"
@@ -18,12 +19,12 @@ export const HeroBanner = () => {
             objectPosition: "center",
           }}
         />
-        <div className="overlay w-full h-full absolute" />
+        <div className="overlay w-full h-full absolute"></div>
         <div className="max-w-screen-2xl mx-auto px-6 pb-10 pt-32 sm:py-20 md:py-40 relative">
           <h1 className="sm:text-7xl drop-shadow-md text-white top-slide">
             Let your hair <br /> do the talking
           </h1>
-          <div className="h-0.5 w-24 bg-white mb-8" />
+          <div className="h-0.5 w-24 bg-white mb-8"></div>
           <BookingFormButton />
         </div>
       </div>

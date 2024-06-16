@@ -1,4 +1,4 @@
-import { createElement, type FC, type ReactNode } from "react";
+import { createElement, FC, ReactNode } from "react";
 import { JSX } from "react/jsx-runtime";
 import IntrinsicElements = JSX.IntrinsicElements;
 

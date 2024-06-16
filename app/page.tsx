@@ -1,5 +1,4 @@
 import {
-  BookingForm,
   Box,
   CallToActionSection,
   CenterWrapper,
@@ -9,25 +8,15 @@ import {
   Section,
   Spacer,
   SubBlock,
-} from "../app/components";
+} from "@/app/components";
+import Placeholder1 from "../public/the-barbers-club-buitenkant-ingang.jpg";
+import Placeholder2 from "../public/the-barbers-club-interior-design.jpg";
+import Placeholder3 from "../public/the-barbers-club-interior-from-the-inside.jpg";
+import HeroImage from "../public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
-import React from "react";
 
-const Placeholder1 = "/static/the-barbers-club-buitenkant-ingang.jpg";
-const Placeholder2 = "/static/the-barbers-club-interior-design.jpg";
-const Placeholder3 = "/static/the-barbers-club-interior-from-the-inside.jpg";
-
-export default function Home({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { [key: string]: string };
-}) {
-  const isDev = searchParams.dev === "25322";
-
+export default function Home() {
   return (
     <>
       <HeroBanner />
@@ -117,8 +106,9 @@ export default function Home({
           <div className="relative w-full h-full overflow-hidden rounded-lg">
             <Image
               priority
-              src="/static/the-barbers-club-ingang-hoofdafbeelding-header.jpg"
               alt="The Barbers Club fade"
+              src={HeroImage}
+              placeholder="blur"
               quality={100}
               fill
               sizes="100vw"
@@ -131,11 +121,6 @@ export default function Home({
         </Column>
         <Spacer height={16} type="line" />
         <CallToActionSection />
-        {isDev && (
-          <Suspense fallback={null}>
-            <BookingForm />{" "}
-          </Suspense>
-        )}
       </Section>
     </>
   );

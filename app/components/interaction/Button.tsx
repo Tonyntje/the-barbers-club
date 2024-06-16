@@ -1,7 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import type { ReactNode } from "react";
+import { CarbonIconProps } from "@carbon/icons-react/es/CarbonIcon";
 
 export const Button = ({
   type,
@@ -31,7 +31,7 @@ export const Button = ({
         })}
       >
         {label}
-        {icon}
+        {icon && <>{icon}</>}
       </div>
     </button>
   );
@@ -43,5 +43,5 @@ type Button = {
   readonly variant: "primary" | "secondary";
   readonly label: string;
   readonly onClick?: () => void;
-  readonly icon?: ReactNode;
+  readonly icon?: CarbonIconProps;
 };

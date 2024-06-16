@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Column,
-  Heading,
-  Copyright,
-  ShopTimes,
-  BookingFormButton,
-} from "../../components";
-import React from "react";
+import TheBarbersClubFooterLogo from "../../../public/TheBarbersClubFooterLogo.svg";
+import { Column } from "@/app/components/utilities/Column";
+import Heading from "@/app/components/content/Heading";
+import { Copyright } from "@/app/components/blocks/Copyright";
+import FooterImage from "../../../public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
+import { ShopTimes } from "@/app/components/blocks/ShopTimes";
+import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
 
 export const Footer = () => {
   return (
@@ -16,7 +15,8 @@ export const Footer = () => {
       <Image
         priority
         alt="The Barbers Club footer achtergrond"
-        src="/static/mooi-houte-afwerking-meubilair-the-barbers-club.jpg"
+        src={FooterImage}
+        placeholder="blur"
         quality={100}
         fill
         sizes="100vw"
@@ -24,15 +24,13 @@ export const Footer = () => {
           objectFit: "cover",
         }}
       />
-      <div className="overlay w-full h-full absolute" />
+      <div className="overlay w-full h-full absolute"></div>
       <div className="max-w-screen-2xl sm:flex sm:justify-between sm:mx-auto px-6 py-24 relative">
         <Column cols={3}>
           <div className="flex flex-col gap-6 p-6 text-center border rounded-3xl border-neutral-400">
             <Image
               className="mx-auto"
-              src="/static/TheBarbersClubFooterLogo.svg"
-              width={200}
-              height={200}
+              src={TheBarbersClubFooterLogo}
               alt="The Barbers Club logo in footer"
             />
             <span>
@@ -43,8 +41,8 @@ export const Footer = () => {
               >
                 Stalpaert van der Wieleweg 45, Delft
               </a>
-              , bel ons via <a href="tel:+31639132769">+31639132769</a>, of
-              stuur een e-mail naar{" "}
+              , bel ons via <a href="tel:+31639132769"></a>, of stuur een e-mail
+              naar{" "}
               <a
                 className="text-primary-500 underline"
                 href="mailto:info@thebarbersclub.nl"

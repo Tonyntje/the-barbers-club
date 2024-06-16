@@ -1,7 +1,7 @@
 "use client"; // Error components must be Client Components
 
-import { Button, Heading } from "../app/components";
-import React from "react";
+import Heading from "@/app/components/content/Heading";
+import { Button } from "@/app/components/interaction/Button";
 
 const ErrorNum = () => {
   return (
@@ -11,7 +11,6 @@ const ErrorNum = () => {
   );
 };
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export default function Error({
   error,
   reset,

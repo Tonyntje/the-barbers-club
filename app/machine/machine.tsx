@@ -9,6 +9,7 @@ type CartStore = {
 
 export interface BearState {
   isOpen: boolean;
+  isDev: boolean;
   setBookingStatus: (state: boolean) => void;
 }
 

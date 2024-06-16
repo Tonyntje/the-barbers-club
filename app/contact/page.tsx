@@ -1,7 +1,8 @@
 import { Column, Heading, Section, Spacer } from "@/app/components";
+import ContactImage from "@/public/the-barbers-club-interior-from-the-inside.jpg";
 import Image from "next/image";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -34,11 +35,11 @@ export default async function Page() {
           <Image
             priority
             alt="Het interieur van The Barbers Club"
-            src="/static/the-barbers-club-interior-from-the-inside.jpg"
+            src={ContactImage}
+            placeholder="blur"
             quality={100}
-            width={1000}
-            height={200}
             className="h-full"
+            sizes="100vh"
             style={{
               objectFit: "cover",
             }}
