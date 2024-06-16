@@ -3,12 +3,13 @@
 import { Calendar, Subtract } from "@carbon/icons-react";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { BookingStatus } from "./BookingStatus";
+import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
+import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
 import Image from "next/image";
-import { useStore } from "../../machine/machine";
-import { DatumTijd } from "./helpers/steps/DatumTijd";
-import { Informatie } from "./helpers/steps/Informatie";
-import { Betalen } from "./helpers/steps/Betalen";
+import { useStore } from "@/app/machine/machine";
+import { DatumTijd } from "@/app/components/booking-form/helpers/steps/DatumTijd";
+import { Informatie } from "@/app/components/booking-form/helpers/steps/Informatie";
+import { Betalen } from "@/app/components/booking-form/helpers/steps/Betalen";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
@@ -43,7 +44,6 @@ export const BookingForm = () => {
       {isOpen ? (
         <form className="top-slide">
           <div className="fixed border rounded-lg shadow-2xl right-6 p-12 bottom-6 bg-neutral-100 w-full max-w-[450px] min-w-[200px]">
-            {/* biome-ignore lint/a11y/useKeyWithClickEvents: Bad practice applied */}
             <div
               onClick={() => setBookingStatus(isOpen)}
               className="bg-neutral-100 rounded-lg inline-block absolute right-2 top-2 cursor-pointer"
@@ -54,7 +54,7 @@ export const BookingForm = () => {
               <div className="mx-auto w-fit mb-6">
                 <Image
                   width="200"
-                  src="/static/TheBarbersClubLogo.svg"
+                  src={TheBarberClubLogo}
                   alt="The Barbers Club Logo"
                 />
               </div>
@@ -85,13 +85,12 @@ export const BookingForm = () => {
           </div>
         </form>
       ) : (
-        // biome-ignore lint/a11y/useKeyWithClickEvents: Bad practice applied
         <div
           onClick={() => setBookingStatus(isOpen)}
           className="cursor-pointer fixed rounded-lg shadow-2xl right-12 px-6 py-3 bottom-6 bg-primary-700"
         >
           <span className="text-white flex items-center gap-2">
-            Afspraak maken <Calendar />S
+            Afspraak maken <Calendar />
           </span>
         </div>
       )}

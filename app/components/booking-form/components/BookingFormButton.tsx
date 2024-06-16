@@ -1,9 +1,8 @@
 "use client";
 
+import { useStore } from "@/app/machine/machine";
+import { Button } from "@/app/components";
 import { ArrowRight } from "@carbon/icons-react";
-import React from "react";
-import { Button } from "../../interaction/Button";
-import { useStore } from "../../../machine/machine";
 
 export const BookingFormButton = ({
   label = "Maak een afspraak",

@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { Button, Heading } from "../app/components";
+import { Button, Heading } from "@/app/components";
 import { useState } from "react";
 
 const ErrorNum = () => {

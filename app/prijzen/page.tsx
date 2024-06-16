@@ -6,6 +6,7 @@ import {
 } from "@/app/components";
 import { services } from "@/app/machine/constants";
 import Image from "next/image";
+import FooterImage from "@/public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 
 export default async function Page() {
   return (
@@ -14,7 +15,8 @@ export default async function Page() {
         <Image
           priority
           alt="The Barbers Club footer achtergrond"
-          src="/static/mooi-houte-afwerking-meubilair-the-barbers-club.jpg"
+          src={FooterImage}
+          placeholder="blur"
           quality={100}
           fill
           sizes="100vw"
@@ -22,7 +24,7 @@ export default async function Page() {
             objectFit: "cover",
           }}
         />
-        <div className="overlay w-full top-0 left-0 h-full absolute" />
+        <div className="overlay w-full top-0 left-0 h-full absolute"></div>
         <div className="relative text-white">
           <Heading level={1}>Prijzenlijst</Heading>
           <ul className="mb-8 sm:grid-cols-2 grid gap-4 sm:gap-0 sm:gap-x-8 border-2 p-6 sm:p-12 rounded-3xl">

@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import TheBarberClubLogo from "../../../public/TheBarbersClubLogo.svg";
+import { Nav } from "@/app/components/navigation/Nav";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTrigger,
   TopBar,
-  Nav,
-} from "../../components";
+} from "@/app/components";
 import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
-import React from "react";
 
 export const Header = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -20,7 +20,7 @@ export const Header = () => {
   useEffect(() => {
     getWindowWidth();
 
-    if (typeof window !== "undefined")
+    if (typeof window !== undefined)
       window.addEventListener("resize", () => getWindowWidth());
   }, []);
 
@@ -34,9 +34,8 @@ export const Header = () => {
       <div className="max-w-screen-2xl flex items-center justify-between mx-auto p-6 w-full">
         <a href="/">
           <Image
-            height={50}
-            width={200}
-            src="/static/TheBarbersClubLogo.svg"
+            width="200"
+            src={TheBarberClubLogo}
             alt="The Barbers Club Logo"
           />
         </a>
@@ -52,7 +51,7 @@ export const Header = () => {
                 <a className="mx-auto mt-10" href="/">
                   <Image
                     width="200"
-                    src="/static/TheBarbersClubLogo.svg"
+                    src={TheBarberClubLogo}
                     alt="The Barbers Club Logo"
                   />
                 </a>

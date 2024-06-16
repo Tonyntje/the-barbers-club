@@ -1,6 +1,6 @@
 import Image from "next/image";
+import TreatwellLogo from "./../../../public/TreatwellLogo.svg";
 import { StarFilled } from "@carbon/icons-react";
-import React from "react";
 
 const Stars = () => {
   const size = 20;
@@ -25,12 +25,7 @@ export const TopBar = () => {
           <span className="font-black text-sm">(80+)</span>
           <span>sterren op</span>
           <a href="https://www.treatwell.nl/salon/the-scissors-club/">
-            <Image
-              src="/static/TreatwellLogo.svg"
-              height={40}
-              width={70}
-              alt="Treatwell Logo"
-            />
+            <Image src={TreatwellLogo} alt="Treatwell Logo" />
           </a>
         </div>
         <div className="hidden sm:flex gap-2">
