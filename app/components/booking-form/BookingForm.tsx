@@ -45,7 +45,7 @@ export const BookingForm = () => {
     <>
       {isOpen ? (
         <form className="top-slide">
-          <div className="fixed border rounded-lg shadow-2xl right-2 bottom-2 sm:right-6 p-6 sm:p-12 sm:bottom-6 bg-neutral-100 w-full max-w-[96vw] sm:max-w-[450px] min-w-[200px]">
+          <div className="fixed border rounded-lg shadow-2xl right-2 bottom-2 sm:right-6 p-4 sm:p-12 sm:bottom-6 bg-neutral-100 w-full max-w-[96vw] sm:max-w-[450px] min-w-[200px]">
             <div
               onClick={() => setBookingStatus(isOpen)}
               className="bg-neutral-100 rounded-lg inline-block absolute right-2 top-2 cursor-pointer"
@@ -98,7 +98,7 @@ export const BookingForm = () => {
                 <b>Wilt u alvast een afspraak maken?</b>
                 <br />
                 <span>Bel of whatsApp naar de Barbers Club.</span>
-                <div className="flex gap-4">
+                <div className="flex gap-2 sm:gap-4">
                   <a
                     className="flex mt-3 gap-4 text-lg px-6 py-2 text-white items-center justify-center bg-primary-700 hover:bg-primary-600 transition-colors rounded-xl"
                     href="tel:+31639132769"
