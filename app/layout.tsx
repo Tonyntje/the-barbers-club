@@ -5,6 +5,7 @@ import Logo from "../public/TheBarbersClubLogo.svg";
 import phoneIcon from "../public/phone--incoming.svg";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
+import { Warning } from "@carbon/icons-react";
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
@@ -19,6 +20,14 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         />
       </head>
       <body>
+        <div className="w-full bg-amber-400 p-6 text-center flex justify-center items-center gap-4">
+          <Warning size={30} />
+          <p>
+            <b>The Barbers Club is gesloten</b> van{" "}
+            <b>1 tot en met 6 augustus</b>. U kunt alvast reserveringen
+            aanvragen voor data na 6 augustus.
+          </p>
+        </div>
         {!isDev ? (
           <>
             <Header />
