@@ -9,6 +9,7 @@ import { Warning } from "@carbon/icons-react";
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
+  const siteNotice = false;
 
   return (
     <html lang="en">
@@ -20,13 +21,16 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
         />
       </head>
       <body>
-        <div className="w-full bg-amber-400 p-6 text-center flex justify-center items-center gap-4">
-          <Warning size={30} />
-          <p>
-            Wegens een cursus in het buitenland zijn wij{" "}
-            <b>van 15 tm 22 augustus</b> gesloten.
-          </p>
-        </div>
+        {siteNotice && (
+          <div className="w-full bg-amber-400 p-6 text-center flex justify-center items-center gap-4">
+            <Warning size={30} />
+            <p>
+              Wegens een cursus in het buitenland zijn wij{" "}
+              <b>van 15 tm 22 augustus</b> gesloten.
+            </p>
+          </div>
+        )}
+
         {!isDev ? (
           <>
             <Header />
