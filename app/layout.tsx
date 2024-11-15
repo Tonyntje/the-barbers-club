@@ -9,7 +9,7 @@ import { Warning } from "@carbon/icons-react";
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
-  const siteNotice = false;
+  const siteNotice = true;
 
   return (
     <html lang="en">
@@ -25,8 +25,8 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
           <div className="w-full bg-amber-400 p-6 text-center flex justify-center items-center gap-4">
             <Warning size={30} />
             <p>
-              Wegens een cursus in het buitenland zijn wij{" "}
-              <b>van 15 tm 22 augustus</b> gesloten.
+              Beste bezoekers. Helaas zijn we in het weekend van{" "}
+              <b>16 & 17 november</b> gesloten.
             </p>
           </div>
         )}
