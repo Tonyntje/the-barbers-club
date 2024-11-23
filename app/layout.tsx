@@ -9,7 +9,7 @@ import { Warning } from "@carbon/icons-react";
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
-  const siteNotice = true;
+  const siteNotice = false;
 
   return (
     <html lang="en">
