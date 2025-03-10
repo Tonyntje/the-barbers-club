@@ -2,25 +2,25 @@ export const services: Service[] = [
   {
     value: "men-cut",
     label: "Mannen knippen",
-    price: 25,
+    price: 30,
     length: 45,
   },
   {
     value: "men-wash-cut-styling",
     label: "Mannen wassen,knippen & stylen",
-    price: 30,
+    price: 37,
     length: 45,
   },
   {
     value: "men-cut-trim",
     label: "Mannen knippen & baard trimmen",
-    price: 35,
+    price: 40,
     length: 60,
   },
   {
     value: "men-cut-shape",
     label: "Mannen knippen & baard reshape",
-    price: 40,
+    price: 45,
     length: 60,
   },
   {
@@ -38,13 +38,13 @@ export const services: Service[] = [
   {
     value: "men-contour-trim",
     label: "Mannen contouren & baard trimmen",
-    price: 20,
+    price: 25,
     length: 45,
   },
   {
     value: "men-contour-reshape",
     label: "Mannen contouren & Baard reshape",
-    price: 25,
+    price: 30,
     length: 45,
   },
   {
@@ -68,13 +68,13 @@ export const services: Service[] = [
   {
     value: "kids-cut",
     label: "Kinderen knippen (t/m 13 jaar)",
-    price: 22,
+    price: 25,
     length: 45,
   },
   {
     value: "senior-cut",
     label: "Senioren knippen (65+)",
-    price: 22,
+    price: 24,
     length: 45,
   },
 ];
