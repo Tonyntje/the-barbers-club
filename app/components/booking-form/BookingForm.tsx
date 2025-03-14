@@ -1,15 +1,16 @@
 "use client";
 
-import { Calendar, Subtract } from "@carbon/icons-react";
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { BookingStatus } from "@/app/components/booking-form/BookingStatus";
-import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
-import Image from "next/image";
-import { useStore } from "@/app/machine/machine";
+import { Betalen } from "@/app/components/booking-form/helpers/steps/Betalen";
 import { DatumTijd } from "@/app/components/booking-form/helpers/steps/DatumTijd";
 import { Informatie } from "@/app/components/booking-form/helpers/steps/Informatie";
-import { Betalen } from "@/app/components/booking-form/helpers/steps/Betalen";
+import {AppointmentNotice} from "@/app/components/content/AppointmentNotice";
+import { useStore } from "@/app/machine/machine";
+import TheBarberClubLogo from "@/public/TheBarbersClubLogo.svg";
+import { Calendar, Subtract } from "@carbon/icons-react";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
@@ -48,6 +49,7 @@ export const BookingForm = () => {
           <div className="fixed border rounded-lg shadow-2xl right-2 bottom-2 sm:right-6 p-4 sm:p-12 sm:bottom-6 bg-neutral-100 w-full max-w-[96vw] sm:max-w-[450px] min-w-[200px]">
             <div
               onClick={() => setBookingStatus(isOpen)}
+              onKeyDown={() => {}}
               className="bg-neutral-100 rounded-lg inline-block absolute right-2 top-2 cursor-pointer"
             >
               <Subtract size={24} />
@@ -104,6 +106,7 @@ export const BookingForm = () => {
                     href="tel:+31639132769"
                   >
                     <div className="bg-primary-800 rounded-full p-2">
+                      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                       <svg
                         id="icon"
                         xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +134,7 @@ export const BookingForm = () => {
                     href="https://wa.me/31639132769?text=Beste%20Barbersclub%20ik%20zou%20graag%20een%20afspraak%20willen%20maken"
                   >
                     <div className="bg-primary-800 rounded-full p-2">
+                      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                       <svg
                         fill="#000000"
                         height="18px"
@@ -158,6 +162,7 @@ export const BookingForm = () => {
                     WhatsApp
                   </a>
                 </div>
+                <AppointmentNotice />
               </div>
             )}
           </div>
@@ -165,6 +170,7 @@ export const BookingForm = () => {
       ) : (
         <div
           onClick={() => setBookingStatus(isOpen)}
+          onKeyDown={() => {}}
           className="cursor-pointer fixed rounded-lg shadow-2xl right-12 px-6 py-3 bottom-6 bg-primary-700"
         >
           <span className="text-white flex items-center gap-2">
