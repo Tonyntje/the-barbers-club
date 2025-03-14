@@ -1,21 +1,28 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "react"
-  ],
-  "rules": {
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  }
+	"extends": [
+		"eslint:recommended",
+		"next/core-web-vitals",
+		"next",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"rules": {
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"no-unused-vars": "warn",
+		"indent": ["warn", "tab"],
+		"quotes": ["warn", "double"],
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-uses-react": "off"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
 }

@@ -1,20 +1,13 @@
-import { create } from "zustand";
-
-type CartStore = {
-  cart: number;
-  add: () => void;
-  remove: () => void;
-  removeAll: () => void;
-};
+import {create} from "zustand";
 
 export interface BearState {
-  isOpen: boolean;
-  isDev: boolean;
-  setBookingStatus: (state: boolean) => void;
+	isOpen: boolean;
+	isDev: boolean;
+	setBookingStatus: (state: boolean) => void;
 }
 
 export const useStore = create<BearState>()((set) => ({
-  isOpen: false,
-  isDev: false,
-  setBookingStatus: (state: boolean) => set({ isOpen: !state }),
+	isOpen: false,
+	isDev: false,
+	setBookingStatus: (state: boolean) => set({ isOpen: !state }),
 }));

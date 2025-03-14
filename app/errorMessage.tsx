@@ -1,7 +1,7 @@
 "use client"; // Error components must be Client Components
 
 import Heading from "@/app/components/content/Heading";
-import {Button} from "@/app/components/interaction/Button";
+import {Button} from "@/app/components/interaction/ButtonType";
 
 const ErrorNum = () => {
 	return (
@@ -11,7 +11,7 @@ const ErrorNum = () => {
 	);
 };
 
-export default function Error() {
+export default function ErrorMessage() {
 	return (
 		<div className=" gap-4 radial-background w-full h-full sm:min-h-[700px] p-28 flex flex-col items-center justify-center">
 			<ErrorNum />

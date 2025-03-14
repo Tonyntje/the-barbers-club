@@ -67,7 +67,7 @@ h6 {
 }
 
 main a {
-    @apply text-primary-700;
+    /*@apply text-primary-700;*/
     @apply underline
 }
 

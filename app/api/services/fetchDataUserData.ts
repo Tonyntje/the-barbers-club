@@ -1,28 +1,26 @@
-import { apiKey, bookingApiEndpoint } from "@/app/api/services/apiSettings";
+import {apiKey, bookingApiEndpoint} from "@/app/api/services/apiSettings";
+import type {DataType} from "@/app/api/booking/route";
 
-export const fetchDataUserData = async (orderNumber: string) => {
-  try {
-    const response = await fetch(bookingApiEndpoint, {
-      method: "GET",
-      headers: {
-        ...(apiKey && { Authorization: apiKey }),
-      },
-    });
+const getOptions = {
+	method: "GET",
+	headers: {
+		...(apiKey && { Authorization: apiKey }),
+	},
+};
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+export const fetchDataUserData = async (
+	orderNumber: string,
+): Promise<DataType | undefined> => {
+	try {
+		const response = await fetch(bookingApiEndpoint, getOptions);
 
-    const orderData = await response.json();
+		if (!response.ok) {
+			throw new Error(`HTTP error! Status: ${response.status}`);
+		}
 
-    if (!Array.isArray(orderData))
-      throw new Error(`HTTP error! Status: ${response.status}`);
-
-    // Found Data
-    return orderData.find((order) => order.id === orderNumber);
-  } catch (error: unknown) {
-    console.error("Error fetching data:", error);
-  }
-
-  return false;
+		const orderData: DataType[] = await response.json();
+		return orderData.find((order) => order.id === orderNumber);
+	} catch (error: unknown) {
+		console.error("Error fetching data:", error);
+	}
 };

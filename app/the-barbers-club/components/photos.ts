@@ -10,14 +10,14 @@ import image10 from "../../../public/IMG_9909.jpg";
 import image11 from "../../../public/IMG_9910.jpg";
 
 export const photos = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
+	image1,
+	image2,
+	image3,
+	image4,
+	image6,
+	image7,
+	image8,
+	image9,
+	image10,
+	image11,
 ];

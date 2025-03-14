@@ -14,7 +14,7 @@ export * from "./content/CallToActionSection";
 export * from "./content/PageHeader";
 
 // Interaction
-export * from "./interaction/Button";
+export * from "./interaction/ButtonType";
 export * from "./booking-form/components/BookingFormButton";
 
 // Navigation
@@ -23,8 +23,8 @@ export * from "./navigation/Nav";
 // Utilities
 export * from "./utilities/Box";
 export * from "./utilities/Column";
-export * from "./utilities/CenterWrapper";
-export * from "./utilities/Spacer";
+export * from "./utilities/CenterWrapperType";
+export * from "./utilities/SpacerType";
 export * from "./utilities/SubBlock";
 export * from "./utilities/Sheet";
 

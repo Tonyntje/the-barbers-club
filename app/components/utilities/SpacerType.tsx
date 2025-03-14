@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-export const Spacer = ({ height, type }: Spacer) => {
+export const Spacer = ({ height, type }: SpacerType) => {
 	return (
 		<div
 			className={classNames("h-0.5", {
@@ -14,7 +14,7 @@ export const Spacer = ({ height, type }: Spacer) => {
 	);
 };
 
-type Spacer = {
+type SpacerType = {
 	readonly height: 8 | 16 | 24 | 32;
 	readonly type?: "line";
 };

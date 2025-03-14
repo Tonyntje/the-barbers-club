@@ -10,7 +10,7 @@ export const Button = ({
 	icon,
 	onClick,
 	disabled,
-}: Button) => {
+}: ButtonType) => {
 	return (
 		<button
 			disabled={disabled}
@@ -18,11 +18,11 @@ export const Button = ({
 			onClick={onClick}
 			className={classNames("rounded-md transition-all", {
 				"text-neutral-100 border-2 border-primary-700 bg-primary-700 hover:bg-primary-600 font-light":
-          variant === "primary" && !disabled,
+					variant === "primary" && !disabled,
 				"text-neutral-950 border-2 hover:bg-neutral-200 font-bold":
-          variant === "secondary" && !disabled,
+					variant === "secondary" && !disabled,
 				"bg-neutral-400 border-2 border-neutral-200 text-neutral-200 font-light":
-          disabled,
+					disabled,
 			})}
 		>
 			<div
@@ -37,11 +37,11 @@ export const Button = ({
 	);
 };
 
-type Button = {
-  readonly disabled?: boolean;
-  readonly type: "submit" | "button";
-  readonly variant: "primary" | "secondary";
-  readonly label: string;
-  readonly onClick?: () => void;
-  readonly icon?: CarbonIconProps;
+type ButtonType = {
+	readonly disabled?: boolean;
+	readonly type: "submit" | "button";
+	readonly variant: "primary" | "secondary";
+	readonly label: string;
+	readonly onClick?: () => void;
+	readonly icon?: CarbonIconProps;
 };
