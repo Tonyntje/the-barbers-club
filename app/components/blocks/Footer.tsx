@@ -8,6 +8,7 @@ import { Copyright } from "@/app/components/blocks/Copyright";
 import FooterImage from "../../../public/mooi-houte-afwerking-meubilair-the-barbers-club.jpg";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
 import { BookingFormButton } from "@/app/components/booking-form/components/BookingFormButton";
+import {AppointmentNotice} from "@/app/components/content/AppointmentNotice";
 
 export const Footer = () => {
   return (
@@ -24,7 +25,7 @@ export const Footer = () => {
           objectFit: "cover",
         }}
       />
-      <div className="overlay w-full h-full absolute"></div>
+      <div className="overlay w-full h-full absolute" />
       <div className="max-w-screen-2xl sm:flex sm:justify-between sm:mx-auto px-6 py-24 relative">
         <Column cols={3}>
           <div className="flex flex-col gap-6 p-6 text-center border rounded-3xl border-neutral-400">
@@ -41,7 +42,7 @@ export const Footer = () => {
               >
                 Stalpaert van der Wieleweg 45, Delft
               </a>
-              , bel ons via <a href="tel:+31639132769"></a>, of stuur een e-mail
+              , bel ons via <a className="text-primary-500 underline" href="tel:+31639132769">+31 6 39 13 2769</a>, of stuur een e-mail
               naar{" "}
               <a
                 className="text-primary-500 underline"

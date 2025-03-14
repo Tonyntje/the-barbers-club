@@ -14,13 +14,13 @@ import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
 
 export const Header = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1000);
   const isMobile = windowWidth < 768;
 
   useEffect(() => {
     getWindowWidth();
 
-    if (typeof window !== undefined)
+    if (typeof window !== 'undefined')
       window.addEventListener("resize", () => getWindowWidth());
   }, []);
 
@@ -37,6 +37,7 @@ export const Header = () => {
             width="200"
             src={TheBarberClubLogo}
             alt="The Barbers Club Logo"
+            priority
           />
         </a>
         {isMobile ? (

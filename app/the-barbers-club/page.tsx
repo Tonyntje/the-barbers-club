@@ -1,5 +1,5 @@
 import { Heading, Section, Spacer, SubHeader } from "@/app/components";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { PhotoGallery } from "./components/PhotoGallery";
 import Image from "next/image";
 import HeroImage from "@/public/the-barbers-club-ingang-hoofdafbeelding-header.jpg";
@@ -9,13 +9,7 @@ export const metadata: Metadata = {
   description: "Kijk binnen bij The Barbers Club",
 };
 
-export default async function Page({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { [key: string]: string };
-}) {
+export default async function Page() {
   return (
     <>
       <SubHeader />

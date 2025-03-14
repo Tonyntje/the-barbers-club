@@ -25,7 +25,7 @@ export const TopBar = () => {
           <span className="font-black text-sm">(80+)</span>
           <span>sterren op</span>
           <a href="https://www.treatwell.nl/salon/the-scissors-club/">
-            <Image src={TreatwellLogo} alt="Treatwell Logo" />
+            <Image src={TreatwellLogo} alt="Treatwell Logo" priority />
           </a>
         </div>
         <div className="hidden sm:flex gap-2">

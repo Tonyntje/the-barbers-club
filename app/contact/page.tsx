@@ -2,7 +2,9 @@ import { Column, Heading, Section, Spacer } from "@/app/components";
 import ContactImage from "@/public/the-barbers-club-interior-from-the-inside.jpg";
 import Image from "next/image";
 import { ShopTimes } from "@/app/components/blocks/ShopTimes";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import {AppointmentNotice} from "@/app/components/content/AppointmentNotice";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -28,6 +30,7 @@ export default async function Page() {
             <p>
               Tel: <a href="tel:+31639132769">+31 6 391 327 69</a>
             </p>
+            <AppointmentNotice />
             <Spacer type="line" height={8} />
             <Heading level={4}>Openingstijden</Heading>
             <ShopTimes mode="light" />
