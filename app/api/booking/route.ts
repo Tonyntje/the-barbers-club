@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 // Dummy data
 const orders: DataType[] = [];
@@ -38,9 +39,9 @@ function validateApiKey(apiKey: string | null) {
 }
 
 export type DataType = {
-  readonly id: string;
-  readonly name: string;
-  readonly phone: string;
-  readonly service: string;
-  readonly dateOfReservation: Date;
+	readonly id: string;
+	readonly name: string;
+	readonly phone: string;
+	readonly service: string;
+	readonly dateOfReservation: Date;
 };

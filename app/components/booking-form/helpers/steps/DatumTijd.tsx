@@ -1,16 +1,12 @@
-import { Box, Button, Heading } from "@/app/components";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/app/components/booking-form/components/popover";
-import { getTimesForWeekDay } from "@/app/components/booking-form/helpers/getTimesForWeekDay";
-import { ButtonCn } from "@/app/components/button";
-import { CalendarForm } from "@/app/components/form/calendar";
+import {Box, Button, Heading} from "@/app/components";
+import {Popover, PopoverContent, PopoverTrigger,} from "@/app/components/booking-form/components/popover";
+import {getTimesForWeekDay} from "@/app/components/booking-form/helpers/getTimesForWeekDay";
+import {ButtonCn} from "@/app/components/button";
+import {CalendarForm} from "@/app/components/form/calendar";
 import classNames from "classnames";
-import { format } from "date-fns";
-import { nl } from "date-fns/locale";
-import { CalendarIcon } from "lucide-react";
+import {format} from "date-fns";
+import {nl} from "date-fns/locale";
+import {CalendarIcon} from "lucide-react";
 import type {Dispatch, SetStateAction} from "react";
 
 export const DatumTijd = ({
@@ -20,11 +16,11 @@ export const DatumTijd = ({
 	setTime,
 	setStatus,
 }: {
-  readonly date: Date;
-  readonly time: string;
-  readonly setDate: Dispatch<SetStateAction<Date>>;
-  readonly setTime: Dispatch<SetStateAction<string>>;
-  readonly setStatus: Dispatch<SetStateAction<number>>;
+	readonly date: Date;
+	readonly time: string;
+	readonly setDate: Dispatch<SetStateAction<Date>>;
+	readonly setTime: Dispatch<SetStateAction<string>>;
+	readonly setStatus: Dispatch<SetStateAction<number>>;
 }) => {
 	const times = getTimesForWeekDay(date);
 
@@ -53,6 +49,7 @@ export const DatumTijd = ({
 					</PopoverTrigger>
 					<PopoverContent className="w-auto p-0">
 						<CalendarForm
+							required
 							mode="single"
 							selected={date}
 							// @ts-ignore -- Works supposedly
@@ -62,34 +59,35 @@ export const DatumTijd = ({
 				</Popover>
 				<div className="grid-cols-4 gap-1 grid text-sm">
 					{date &&
-            times?.map(({ flat, normal }) => {
-            	return (
-            		<div
-            			className="inline"
-            			key={flat}
-            			onClick={() => setTime(flat)}
-            		>
-            			<input
-            				type="radio"
-            				onChange={(e) => setTime(e.target.value)}
-            				value={flat}
-            				id="times"
-            				name={flat}
-            				className="hidden"
-            				checked={flat === time}
-            			/>
-            			<label
-            				className={classNames(
-            					"hover:bg-neutral-200 text-sm block border-2 w-full h-full bg-white rounded-lg text-center hover:cursor-pointer hover:outline-1 hover:outline-emerald-700",
-            					{ "border-primary-700 ": flat === time },
-            				)}
-            				htmlFor={flat}
-            			>
-            				{normal}
-            			</label>
-            		</div>
-            	);
-            })}
+						times?.map(({ flat, normal }) => {
+							return (
+								<div
+									className="inline"
+									key={flat}
+									onClick={() => setTime(flat)}
+									onKeyDown={() => {}}
+								>
+									<input
+										type="radio"
+										onChange={(e) => setTime(e.target.value)}
+										value={flat}
+										id="times"
+										name={flat}
+										className="hidden"
+										checked={flat === time}
+									/>
+									<label
+										className={classNames(
+											"hover:bg-neutral-200 text-sm block border-2 w-full h-full bg-white rounded-lg text-center hover:cursor-pointer hover:outline-1 hover:outline-emerald-700",
+											{ "border-primary-700 ": flat === time },
+										)}
+										htmlFor={flat}
+									>
+										{normal}
+									</label>
+								</div>
+							);
+						})}
 				</div>
 			</Box>
 			<div className="flex mt-4 justify-between">

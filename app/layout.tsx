@@ -1,4 +1,5 @@
-import {ReactNode, Suspense} from "react";
+import type {ReactNode} from "react";
+import {Suspense} from "react";
 import "./globals.css";
 import Image from "next/image";
 import Logo from "../public/TheBarbersClubLogo.svg";
@@ -25,7 +26,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
 					<div className="w-full bg-amber-400 p-6 text-center flex justify-center items-center gap-4">
 						<Warning size={30} />
 						<p>
-              Beste bezoekers. Helaas zijn we in het weekend van{" "}
+							Beste bezoekers. Helaas zijn we in het weekend van{" "}
 							<b>16 & 17 november</b> gesloten.
 						</p>
 					</div>
@@ -34,7 +35,9 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
 				{!isDev ? (
 					<>
 						<Header />
-						<main>{children}</main>
+						<Suspense fallback={null}>
+							<main>{children}</main>
+						</Suspense>
 						<Footer />
 						<Suspense fallback={null}>
 							<FacebookPixelEvents />
@@ -46,11 +49,11 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
 						<div className="border-primary-200 sm:shadow-2xl text-center text-white sm:border p-6 sm:p-12 sm:rounded-2xl max-w-[600px]">
 							<Image className="mx-auto mb-10" src={Logo} alt={"logo"} />
 							<h1 className="drop-shadow-xl">
-                Website komt binnenkort online!
+								Website komt binnenkort online!
 							</h1>
 							<h4 className="font-light text-[20px] sm:text-xl">
-                We zijn nog druk aan de slag met de website. <br /> Nog een
-                klein beetje geduld alstublieft!
+								We zijn nog druk aan de slag met de website. <br /> Nog een
+								klein beetje geduld alstublieft!
 							</h4>
 
 							<div className="flex flex-col bg-white text-center text-neutral-800 mt-10 p-6 rounded-2xl w-full">
@@ -61,7 +64,7 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
 									href="tel:+31639132769"
 								>
 									<Image src={phoneIcon} alt={"Bel ons"} />
-                  +31 6 391 327 69
+									+31 6 391 327 69
 								</a>
 							</div>
 						</div>
