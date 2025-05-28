@@ -1,3 +1,5 @@
+import { Service, Times } from './types';
+
 export const services: Service[] = [
   {
     value: "men-cut",
@@ -72,12 +74,6 @@ export const services: Service[] = [
     length: 45,
   },
   {
-    value: "students-cut",
-    label: "Studenten knippen",
-    price: 25,
-    length: 45,
-  },
-  {
     value: "senior-cut",
     label: "Senioren knippen (65+)",
     price: 24,
@@ -95,14 +91,14 @@ export const shopTimes: Times = [
   { time: "Gesloten", label: "Zondag" },
 ];
 
-type Times = {
-  time: { from: number; to: number } | "Gesloten";
-  label: string;
-}[];
+export const WEEKDAYS = [
+  "Zondag", 
+  "Maandag", 
+  "Dinsdag", 
+  "Woensdag", 
+  "Donderdag", 
+  "Vrijdag", 
+  "Zaterdag"
+];
 
-type Service = {
-  readonly value: string;
-  readonly label: string;
-  readonly price: number;
-  readonly length: number;
-};
+export const TIME_INTERVAL = 15; // minutes
