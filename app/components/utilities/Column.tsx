@@ -23,5 +23,5 @@ type ColumnType = {
   readonly cols: 2 | 3 | 4;
   readonly gaps?: "none" | "sm" | "md";
   readonly children: ReactNode;
-  readonly center: boolean;
+  readonly center?: boolean;
 };
