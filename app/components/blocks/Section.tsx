@@ -6,7 +6,6 @@ export const Section = ({
   background,
   spacing,
   className,
-  ...props
 }: {
   readonly children: ReactNode;
   readonly background?: "grey";
@@ -21,14 +20,11 @@ export const Section = ({
       })}
     >
       <div
-        className={classNames(
-          props?.className + " mx-auto max-w-screen-2xl px-6",
-          {
-            "py-8": spacing === 8,
-            "py-16": spacing === 16,
-            "py-32": spacing === 32,
-          },
-        )}
+        className={classNames(className + " mx-auto max-w-screen-2xl px-6", {
+          "py-8": spacing === 8,
+          "py-16": spacing === 16,
+          "py-32": spacing === 32,
+        })}
       >
         {children}
       </div>
