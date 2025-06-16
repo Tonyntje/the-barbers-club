@@ -19,8 +19,10 @@ export const Betalen = ({
   const serviceInfo = services.find(({ value }) => service === value);
 
   const timeSplit = time.split("");
-
   const timeCorrect = timeSplit.length === 3 && [0, ...timeSplit];
+
+  if (!timeCorrect[0] || !timeCorrect[1] || !timeCorrect[2] || !timeCorrect[3])
+    return null;
 
   const formattedTime =
     timeCorrect[0] + timeCorrect[1] + ":" + timeCorrect[2] + timeCorrect[3];
