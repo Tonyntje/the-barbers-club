@@ -17,6 +17,7 @@ export const Betalen = ({
 }) => {
   const { service, name, date, time } = orderDetails;
   const serviceInfo = services.find(({ value }) => service === value);
+
   const timeSplit = time.split("");
 
   const timeCorrect = timeSplit.length === 3 && [0, ...timeSplit];
@@ -27,7 +28,7 @@ export const Betalen = ({
   const getPayment = () => {
     if (!serviceInfo?.label || !serviceInfo?.price) return;
 
-    createPayment(serviceInfo.price, serviceInfo.label).then((redirectUrl) => {
+    createPayment(serviceInfo, orderDetails).then((redirectUrl) => {
       redirectUrl && redirect(redirectUrl);
     });
   };

@@ -8,39 +8,22 @@ import {
 import { v4 as uuidv4 } from "uuid";
 
 import createMollieClient from "@mollie/api-client";
+import { Service } from "@/app/machine/constants";
 
-export const createPayment = async (amount: number, service: string) => {
+export const createPayment = async (
+  { amount, service }: Service,
+  { name, date, time },
+) => {
   const paymentApi = development ? mollieKeyTest : mollieKey;
   const mollieClient = createMollieClient({ apiKey: paymentApi });
-
-  // const orderDetails = JSON.stringify({
-  //   amount: {
-  //     currency: "EUR",
-  //     value: `${amount}.00`,
-  //   },
-  //   description: `Aanbetaling voor de dienst ${service}`,
-  //   redirectUrl: "https://www.thebarbersclub.nl/bedankt",
-  // });
-  //
-  // const myHeaders = new Headers();
-  // myHeaders.append("Content-Type", "application/json");
-  // myHeaders.append("Access-Control-Allow-Origin", "*");
-  // myHeaders.append("Authorization", `Bearer ${paymentApi}`);
-  //
-  // const createPayment = await fetch("https://api.mollie.com/v2/payments", {
-  //   method: "POST",
-  //   headers: myHeaders,
-  //   body: orderDetails,
-  //   redirect: "follow",
-  // }).then((response) => response.text());
 
   const payment = await mollieClient.payments.create({
     amount: {
       currency: "EUR",
       value: `${amount}.00`,
     },
-    description: `Aanbetaling voor de dienst ${service}`,
-    redirectUrl: "https://www.thebarbersclub.nl/bedankt",
+    description: `Aanbetaling voor "${service}" - ${name} | Op ${date} om ${time}`,
+    redirectUrl: `https://www.thebarbersclub.nl/bedankt?name=${name}&date=${date}&time=${time}`,
     metadata: {
       order_id: uuidv4,
     },
