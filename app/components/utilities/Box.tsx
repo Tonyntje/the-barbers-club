@@ -1,9 +1,12 @@
 import type { ReactNode } from "react";
 import classNames from "classnames";
 
-export const Box = ({ children, size = "md", ...props }: BoxType) => {
-  console.log(props);
-
+export const Box = ({
+  children,
+  size = "md",
+  className,
+  ...props
+}: BoxType) => {
   return (
     <div
       className={classNames(
@@ -23,4 +26,5 @@ export const Box = ({ children, size = "md", ...props }: BoxType) => {
 type BoxType = {
   readonly children: ReactNode;
   readonly size?: "sm" | "md";
+  readonly className?: string;
 };

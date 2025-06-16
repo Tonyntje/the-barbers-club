@@ -5,11 +5,13 @@ export const Section = ({
   children,
   background,
   spacing,
+  className,
   ...props
 }: {
   readonly children: ReactNode;
   readonly background?: "grey";
   readonly spacing?: 8 | 16 | 32;
+  readonly className?: string;
 }) => {
   return (
     <section
