@@ -22,7 +22,7 @@ export const Section = ({
     >
       <div
         className={classNames(
-          props.className + " mx-auto max-w-screen-2xl px-6",
+          props?.className + " mx-auto max-w-screen-2xl px-6",
           {
             "py-8": spacing === 8,
             "py-16": spacing === 16,
