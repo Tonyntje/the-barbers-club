@@ -4,11 +4,13 @@ import classNames from "classnames";
 export const Box = ({ children, size = "md", className }: BoxType) => {
   return (
     <div
-      className={classNames("rounded-lg border border-neutral-300", {
-        "p-3": size === "sm",
-        "p-6": size === "md",
-        className: className,
-      })}
+      className={
+        className +
+        classNames("rounded-lg border border-neutral-300", {
+          "p-3": size === "sm",
+          "p-6": size === "md",
+        })
+      }
     >
       {children}
     </div>
