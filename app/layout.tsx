@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import "./globals.css";
@@ -7,85 +9,10 @@ import phoneIcon from "../public/phone--incoming.svg";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
 import { Warning } from "@carbon/icons-react";
-import { google } from "googleapis";
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
   const siteNotice = false;
-
-  const SCOPES = [
-    "https://www.googleapis.com/auth/calendar",
-    "https://www.googleapis.com/auth/calendar.events",
-  ];
-
-  const calendarId =
-    "053ef03502473fc6671b7af3e19476c7a4dd39efc33aaef9bd9139294b5fef70@group.calendar.google.com";
-
-  const initGoogleCalendar = async () => {
-    try {
-      const credentials = {
-        client_id: process.env.CLIENT_ID,
-        client_email: process.env.CLIENT_EMAIL,
-        project_id: process.env.PROJECT_ID,
-        private_key: process.env.PRIVATE_KEY,
-      };
-      const auth = new google.auth.GoogleAuth({
-        credentials: credentials,
-        scopes: SCOPES,
-      });
-
-      const calendar = google.calendar({ version: "v3", auth });
-
-      console.log("Google Calendar API initialized:");
-      return calendar;
-    } catch (error) {
-      console.error("Error initializing Google Calendar API:", error);
-    }
-  };
-
-  const getAvailableSlots = async (date: string) => {
-    const calendar = await initGoogleCalendar();
-
-    if (!calendar) return;
-
-    const response = await calendar.events.list({
-      calendarId: calendarId,
-      eventTypes: ["default"],
-      singleEvents: true,
-      orderBy: "startTime",
-    });
-
-    if (!response) return;
-
-    const events = response?.data?.items || [];
-
-    if (!events) return;
-    console.log(events);
-
-    // const dateSlots = await buildDateSlots(dayDate);
-
-    // const availableSlots = dateSlots.filter((slot) => {
-    //   const slotEnd = add(slot, { minutes: 20 });
-    //
-    //   // Check if this slot conflicts with any existing event
-    //   const hasConflict = events.some((event: googleCalendar.Schema$Event) => {
-    //     const eventStart = new Date(event.start?.dateTime || "");
-    //     const eventEnd = new Date(event.end?.dateTime || "");
-    //     return isBefore(slot, eventEnd) && isAfter(slotEnd, eventStart);
-    //   });
-    //
-    //   return !hasConflict;
-    // });
-
-    // Convert available Date objects to string time slots
-    // return availableSlots.map((slot) => {
-    //   return format(toZonedTime(slot, "Europe/Paris"), "HH:mm");
-    // });
-
-    return;
-  };
-
-  console.dir(getAvailableSlots());
 
   return (
     <html lang="en">

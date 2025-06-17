@@ -5,15 +5,17 @@ import { services } from "@/app/machine/constants";
 import { createPayment } from "@/app/components/booking-form/services/createPayment";
 import { redirect } from "next/navigation";
 
+export interface OrderDetails {
+  service: string;
+  name: string;
+  date: Date;
+  time: string;
+}
+
 export const Betalen = ({
   orderDetails,
 }: {
-  readonly orderDetails: {
-    service: string;
-    name: string;
-    date: Date;
-    time: string;
-  };
+  readonly orderDetails: OrderDetails;
 }) => {
   const { service, name, date, time } = orderDetails;
   const serviceInfo = services.find(({ value }) => service === value);
@@ -21,11 +23,11 @@ export const Betalen = ({
   const timeSplit = time.split("");
   const timeCorrect = timeSplit.length === 3 && [0, ...timeSplit];
 
-  if (!timeCorrect[0] || !timeCorrect[1] || !timeCorrect[2] || !timeCorrect[3])
-    return null;
+  if (Array.isArray(timeCorrect) && timeCorrect.length < 4) return null;
 
   const formattedTime =
-    timeCorrect[0] + timeCorrect[1] + ":" + timeCorrect[2] + timeCorrect[3];
+    Array.isArray(timeCorrect) &&
+    `${timeCorrect[0]}${timeCorrect[1]}:${timeCorrect[2]}${timeCorrect[3]}`;
 
   const getPayment = () => {
     if (!serviceInfo?.label || !serviceInfo?.price) return;
