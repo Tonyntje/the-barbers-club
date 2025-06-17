@@ -30,7 +30,7 @@ export const createPayment = async (service: Service, user: OrderDetails) => {
         value: `${amount}.00`,
       },
       description: `Aanbetaling voor "${serviceName}" - ${name} | Op ${date} om ${time}`,
-      redirectUrl: `https://www.thebarbersclub.nl/bedankt?name=${name}&date=${date}&time=${time}&length=${duration}`,
+      redirectUrl: `https://www.thebarbersclub.nl/reservering-voltooid?name=${name}&date=${date}&time=${time}&length=${duration}`,
       metadata: {
         order_id: uuidv4,
       },

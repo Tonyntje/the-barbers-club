@@ -2,12 +2,11 @@
 import { NextResponse } from "next/server";
 import { getAccessToken } from "@/app/api/utils/getAccessToken";
 
-export async function POST() {
+export async function GET() {
   try {
-    const accessToken = await getAccessToken();
+    await getAccessToken();
 
-    console.log("Token Refreshed");
-    console.log(accessToken);
+    return NextResponse.json({ message: "Token Refreshed" }, { status: 200 });
   } catch (err: any) {
     console.error(err);
     return NextResponse.json({ error: err.message }, { status: 500 });
