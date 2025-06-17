@@ -14,10 +14,9 @@ export const createPayment = async (service: Service, user: OrderDetails) => {
   const paymentApi = development ? mollieKeyTest : mollieKey;
   const mollieClient = paymentApi && createMollieClient({ apiKey: paymentApi });
 
-  const amount = service?.amount;
-  const serviceName = service?.service;
-
-  console.log(service);
+  const amount = service?.price;
+  const serviceName = service?.label;
+  const duration = service?.length;
 
   const name = user.name;
   const date = user.date;
@@ -31,7 +30,7 @@ export const createPayment = async (service: Service, user: OrderDetails) => {
         value: `${amount}.00`,
       },
       description: `Aanbetaling voor "${serviceName}" - ${name} | Op ${date} om ${time}`,
-      redirectUrl: `https://www.thebarbersclub.nl/bedankt?name=${name}&date=${date}&time=${time}`,
+      redirectUrl: `https://www.thebarbersclub.nl/bedankt?name=${name}&date=${date}&time=${time}&length=${duration}`,
       metadata: {
         order_id: uuidv4,
       },

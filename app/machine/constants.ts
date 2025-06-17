@@ -99,7 +99,4 @@ export type Service = {
   readonly label: string;
   readonly price: number;
   readonly length: number;
-
-  readonly amount?: string;
-  readonly service?: string;
 };
