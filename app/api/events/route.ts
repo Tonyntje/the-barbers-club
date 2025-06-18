@@ -10,7 +10,22 @@ export async function GET() {
 
   const calendarId = "thegekkewous@gmail.com";
   const apiKey = process.env.CLIENT_API;
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}`;
+
+  // Huidige datum en datum over 3 maanden
+  const now = new Date();
+  const inThreeMonths = new Date();
+  inThreeMonths.setMonth(now.getMonth() + 3);
+
+  // Omzetten naar ISO-formaat
+  const timeMin = now.toISOString();
+  const timeMax = inThreeMonths.toISOString();
+
+  const url =
+    `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}` +
+    `&timeMin=${encodeURIComponent(timeMin)}` +
+    `&timeMax=${encodeURIComponent(timeMax)}` +
+    `&singleEvents=true` +
+    `&orderBy=startTime`;
 
   try {
     const response = await fetch(url);

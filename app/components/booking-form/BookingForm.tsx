@@ -46,7 +46,7 @@ export const BookingForm = () => {
     <>
       {isOpen ? (
         <form className="top-slide">
-          <div className="fixed right-2 bottom-2 w-full max-w-[96vw] min-w-[200px] rounded-lg border bg-neutral-100 p-4 shadow-2xl sm:right-6 sm:bottom-6 sm:max-w-[450px] sm:p-12">
+          <div className="fixed right-2 bottom-2 z-40 w-full max-w-[96vw] min-w-[200px] rounded-lg border bg-neutral-100 p-4 shadow-2xl sm:right-6 sm:bottom-6 sm:max-w-[450px] sm:p-12">
             <div
               onClick={() => setBookingStatus(isOpen)}
               onKeyDown={() => {}}

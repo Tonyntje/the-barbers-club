@@ -30,11 +30,13 @@ export const Betalen = ({
     `${timeCorrect[0]}${timeCorrect[1]}:${timeCorrect[2]}${timeCorrect[3]}`;
 
   const getPayment = () => {
-    if (!serviceInfo?.label || !serviceInfo?.price) return;
+    if (!serviceInfo?.label || !serviceInfo?.price || !formattedTime) return;
 
-    createPayment(serviceInfo, orderDetails).then((redirectUrl) => {
-      redirectUrl && redirect(redirectUrl);
-    });
+    createPayment(serviceInfo, orderDetails, formattedTime).then(
+      (redirectUrl) => {
+        redirectUrl && redirect(redirectUrl);
+      },
+    );
   };
 
   return (

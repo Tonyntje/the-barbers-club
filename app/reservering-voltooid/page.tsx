@@ -6,16 +6,110 @@ import { Calendar } from "@carbon/icons-react";
 import Image from "next/image";
 import BedanktImage from "../../public/IMG_9910.jpg";
 import Heading from "@/app/components/content/Heading";
+import { useEffect } from "react";
+
+function formatWithOffset(date: Date) {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  const hh = String(date.getHours()).padStart(2, "0");
+  const min = String(date.getMinutes()).padStart(2, "0");
+  const ss = String(date.getSeconds()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}T${hh}:${min}:${ss}+02:00`;
+}
+
+interface postCalendar {
+  time: string;
+  date: string;
+  duration: string;
+  service: string;
+  name: string;
+}
+
+const postCalendar = async ({
+  time,
+  date,
+  duration,
+  service,
+  name,
+}: postCalendar) => {
+  const newDate = Date.parse(`${date}`);
+
+  // Parse time
+  const [hours, minutes] = time.split(":").map(Number);
+
+  // Create base date and set time (adjust for UTC+2)
+  const startDate = new Date(newDate);
+  startDate.setUTCHours(hours - 2, minutes, 0, 0); // Adjust for +02:00
+
+  // Create end date by adding duration
+  const endDate = new Date(startDate.getTime() + Number(duration) * 60 * 1000);
+
+  // Helper function to format date with +02:00
+
+  // Format both
+  const startFormatted = formatWithOffset(startDate);
+  const endFormatted = formatWithOffset(endDate);
+
+  const body = {
+    summary: `Afspraak met ${name}`,
+    description: `${service} om ${time}`,
+    start: {
+      dateTime: startFormatted,
+      timeZone: "Europe/Amsterdam",
+    },
+    end: {
+      dateTime: endFormatted,
+      timeZone: "Europe/Amsterdam",
+    },
+    status: "confirmed",
+  };
+
+  const currentHost = "http://" + window.location.host + "/api/events/";
+
+  try {
+    const getDates = await fetch(currentHost);
+    const jsonDates = await getDates.json();
+
+    const alreadyBooked = jsonDates.some(
+      (date: { start: { dateTime: string } }) => {
+        return date.start.dateTime === startFormatted;
+      },
+    );
+
+    if (alreadyBooked) throw new Error("Already Booked");
+
+    const response = await fetch(currentHost, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error && error.message);
+  }
+};
 
 export default function Page() {
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
   const date = searchParams.get("date");
   const time = searchParams.get("time");
+  const duration = searchParams.get("length");
+  const service = searchParams.get("service");
 
-  const hasUserinfo = name && date && time;
+  const hasUserinfo = name || date || time || duration;
 
   if (!hasUserinfo) return null;
+
+  useEffect(() => {
+    if (time && date && duration && service)
+      postCalendar({ time, date, duration, service, name });
+  }, []);
 
   return (
     <Section spacing={16} className="max-w-screen-xl">
