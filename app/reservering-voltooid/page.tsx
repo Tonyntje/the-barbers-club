@@ -18,7 +18,7 @@ function formatWithOffset(date: Date) {
   return `${yyyy}-${mm}-${dd}T${hh}:${min}:${ss}+02:00`;
 }
 
-interface postCalendar {
+interface PostCalendar {
   time: string;
   date: string;
   duration: string;
@@ -32,7 +32,7 @@ const postCalendar = async ({
   duration,
   service,
   name,
-}: postCalendar) => {
+}: PostCalendar) => {
   const newDate = Date.parse(`${date}`);
 
   // Parse time
@@ -104,12 +104,12 @@ export default function Page() {
 
   const hasUserinfo = name || date || time || duration;
 
-  if (!hasUserinfo) return null;
-
   useEffect(() => {
     if (time && date && duration && service)
       postCalendar({ time, date, duration, service, name });
   }, []);
+
+  if (!hasUserinfo) return null;
 
   return (
     <Section spacing={16} className="max-w-screen-xl">
