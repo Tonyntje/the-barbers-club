@@ -90,7 +90,7 @@ const postCalendar = async ({
     const json = await response.json();
     console.log(json);
   } catch (error) {
-    console.error(error && error.message);
+    console.error(error);
   }
 };
 
@@ -105,7 +105,7 @@ export default function Page() {
   const hasUserinfo = name || date || time || duration;
 
   useEffect(() => {
-    if (time && date && duration && service)
+    if (time && date && duration && service && name)
       postCalendar({ time, date, duration, service, name });
   }, []);
 
