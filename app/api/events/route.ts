@@ -20,7 +20,7 @@ export async function GET() {
   const timeMin = now.toISOString();
   const timeMax = inThreeMonths.toISOString();
 
-  if (!calendarId) return null;
+  if (!calendarId) return;
 
   const url =
     `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}` +
