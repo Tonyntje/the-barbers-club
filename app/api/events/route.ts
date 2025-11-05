@@ -8,7 +8,7 @@ export async function GET() {
   twoMonths.setMonth(twoMonths.getMonth() + 2);
   // const timeMax = twoMonths.toISOString();
 
-  const calendarId = "thegekkewous@gmail.com";
+  const calendarId = process.env.CLIENT_EMAIL;
   const apiKey = process.env.CLIENT_API;
 
   // Huidige datum en datum over 3 maanden
@@ -19,6 +19,8 @@ export async function GET() {
   // Omzetten naar ISO-formaat
   const timeMin = now.toISOString();
   const timeMax = inThreeMonths.toISOString();
+
+  if (!calendarId) return null;
 
   const url =
     `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}` +

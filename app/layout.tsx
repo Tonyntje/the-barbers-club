@@ -9,6 +9,9 @@ import phoneIcon from "../public/phone--incoming.svg";
 import { BookingForm, Footer, Header } from "@/app/components";
 import { FacebookPixelEvents } from "@/app/components/pixel-events";
 import { Warning } from "@carbon/icons-react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const RootLayout = ({ children }: { readonly children: ReactNode }) => {
   const isDev = false;
@@ -43,7 +46,9 @@ const RootLayout = ({ children }: { readonly children: ReactNode }) => {
             <Footer />
             <Suspense fallback={null}>
               <FacebookPixelEvents />
-              <BookingForm />
+              <QueryClientProvider client={queryClient}>
+                <BookingForm />
+              </QueryClientProvider>
             </Suspense>
           </>
         ) : (

@@ -7,6 +7,7 @@ import Image from "next/image";
 import BedanktImage from "../../public/IMG_9910.jpg";
 import Heading from "@/app/components/content/Heading";
 import { useEffect } from "react";
+import { postAppointment } from "@/services/postAppointment";
 
 function formatWithOffset(date: Date) {
   const yyyy = date.getFullYear();
@@ -45,53 +46,11 @@ const postCalendar = async ({
   // Create end date by adding duration
   const endDate = new Date(startDate.getTime() + Number(duration) * 60 * 1000);
 
-  // Helper function to format date with +02:00
-
   // Format both
   const startFormatted = formatWithOffset(startDate);
   const endFormatted = formatWithOffset(endDate);
 
-  const body = {
-    summary: `Afspraak met ${name}`,
-    description: `${service} om ${time}`,
-    start: {
-      dateTime: startFormatted,
-      timeZone: "Europe/Amsterdam",
-    },
-    end: {
-      dateTime: endFormatted,
-      timeZone: "Europe/Amsterdam",
-    },
-    status: "confirmed",
-  };
-
-  const currentHost = "http://" + window.location.host + "/api/events/";
-
-  try {
-    const getDates = await fetch(currentHost);
-    const jsonDates = await getDates.json();
-
-    const alreadyBooked = jsonDates.some(
-      (date: { start: { dateTime: string } }) => {
-        return date.start.dateTime === startFormatted;
-      },
-    );
-
-    if (alreadyBooked) throw new Error("Already Booked");
-
-    const response = await fetch(currentHost, {
-      method: "POST",
-      body: JSON.stringify(body),
-    });
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.error(error);
-  }
+  await postAppointment({ startFormatted, endFormatted, name, service, time });
 };
 
 export default function Page() {

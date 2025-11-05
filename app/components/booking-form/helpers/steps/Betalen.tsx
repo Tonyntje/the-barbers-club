@@ -4,6 +4,7 @@ import { nl } from "date-fns/locale";
 import { services } from "@/app/machine/constants";
 import { createPayment } from "@/app/components/booking-form/services/createPayment";
 import { redirect } from "next/navigation";
+import type { Dispatch, SetStateAction } from "react";
 
 export interface OrderDetails {
   service: string;
@@ -14,14 +15,16 @@ export interface OrderDetails {
 
 export const Betalen = ({
   orderDetails,
+  setStatus,
 }: {
   readonly orderDetails: OrderDetails;
+  readonly setStatus: Dispatch<SetStateAction<number>>;
 }) => {
   const { service, name, date, time } = orderDetails;
   const serviceInfo = services.find(({ value }) => service === value);
 
   const timeSplit = time.split("");
-  const timeCorrect = timeSplit.length === 3 && [0, ...timeSplit];
+  const timeCorrect = timeSplit.length === 3 ? [0, ...timeSplit] : timeSplit;
 
   if (Array.isArray(timeCorrect) && timeCorrect.length < 4) return null;
 
@@ -62,6 +65,12 @@ export const Betalen = ({
         </Box>
       </div>
       <div className="mt-4 flex justify-between">
+        <Button
+          type="button"
+          onClick={() => setStatus(2)}
+          variant="secondary"
+          label="Terug"
+        />
         <Button
           type="button"
           onClick={getPayment}

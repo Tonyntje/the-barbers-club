@@ -11,16 +11,17 @@ import { Calendar, Subtract } from "@carbon/icons-react";
 import Image from "next/image";
 import React, { Suspense, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useQuery } from "@tanstack/react-query";
 
 export const BookingForm = () => {
   const [stepStatus, setStepStatus] = useState(1);
   const [date, setDate] = useState<Date>(new Date());
   const [time, setTime] = useState<string>("");
-  const { control, getValues } = useForm();
+  const { control, getValues, watch } = useForm();
 
   const service = getValues("service") ?? "men-cut";
-  const name = getValues("name");
-  const email = getValues("email");
+  const name = watch("name");
+  const email = watch("email");
 
   const orderDetails = {
     service,
@@ -41,6 +42,43 @@ export const BookingForm = () => {
   const isDev = useStore((state) => state.isDev);
 
   const setBookingStatus = useStore((state) => state.setBookingStatus);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["dates"],
+    queryFn: async () => {
+      const currentHost = "http://" + window.location.host + "/api/events/";
+
+      return await fetch(currentHost).then(async (res) => res.json());
+    },
+  });
+
+  const mappedDates: any = data?.map((dates: any) => {
+    const startHours = new Date(dates.start.dateTime).getHours();
+    const startMinutes = new Date(dates.start.dateTime).getMinutes();
+    const endHours = new Date(dates.end.dateTime).getHours();
+    const endMinutes = new Date(dates.end.dateTime).getMinutes();
+
+    const newStartFormat = startMinutes === 0 ? "00" : startMinutes;
+    const newEndFormat = endMinutes === 0 ? "00" : endMinutes;
+
+    const start = Number(`${startHours}${newStartFormat}`);
+    const end = Number(`${endHours}${newEndFormat}`);
+
+    let amounts = [];
+
+    for (let i = start; i < end; i = i + 15) {
+      const stringy = String(i);
+
+      if (stringy.includes("60")) i = i + 40;
+      amounts.push(stringy);
+    }
+
+    return amounts;
+  });
+
+  if (isLoading) return "Fetching available dates";
+
+  const allBlockedDates = mappedDates.flat(1);
 
   return (
     <>
@@ -70,6 +108,7 @@ export const BookingForm = () => {
                     control={control}
                     setStatus={setStepStatus}
                     name={name}
+                    email={email}
                   />
                 )}
                 {stepStatus === 2 && (
@@ -79,11 +118,16 @@ export const BookingForm = () => {
                     setDate={setDate}
                     setTime={setTime}
                     setStatus={setStepStatus}
+                    blockedDates={allBlockedDates}
+                    service={service}
                   />
                 )}
                 {stepStatus === 3 && (
                   <Suspense fallback={<></>}>
-                    <Betalen orderDetails={orderDetails} />
+                    <Betalen
+                      orderDetails={orderDetails}
+                      setStatus={setStepStatus}
+                    />
                   </Suspense>
                 )}
               </div>
