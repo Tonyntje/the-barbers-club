@@ -34,10 +34,9 @@ export const DatumTijd = ({
   readonly service: string;
 }) => {
   const times = getTimesForWeekDay(date);
+  const [open, setOpen] = useState(false);
 
   if (!times) return "fetching times";
-
-  const [open, setOpen] = useState(false);
 
   const serviceInfo = services.find(({ value }) => service === value);
   const slotOffset = Number(serviceInfo?.length) / 15 - 1;
