@@ -46,7 +46,7 @@ export const BookingForm = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["dates"],
     queryFn: async () => {
-      const currentHost = "http://" + window.location.host + "/api/events/";
+      const currentHost = "https://" + window.location.host + "/api/events/";
 
       return await fetch(currentHost).then(async (res) => res.json());
     },
