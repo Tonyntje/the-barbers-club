@@ -20,7 +20,7 @@ export const services: Service[] = [
 	{
 		value: "men-cut-shape",
 		label: "Mannen knippen & baard reshape",
-		price: 50,
+		price: 49,
 		length: 60,
 	},
 	{
